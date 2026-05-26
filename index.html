@@ -254,6 +254,17 @@ body::before{
 .community-feed-name{font-size:12px;font-weight:800;color:var(--t1);margin-bottom:3px;}
 .community-feed-text{font-size:12px;color:var(--t2);font-weight:600;line-height:1.55;}
 .game-slot{min-height:620px;background:linear-gradient(180deg,#F3EEFF 0%,#F7F4FF 58%,#FFF8FB 100%);padding:12px 14px 54px;color:#3A3158;position:relative;overflow:hidden;}
+.game-picker{display:block;}
+.game-picker.hide{display:none;}
+.game-picker-title{font-size:18px;font-weight:950;color:#3F3565;letter-spacing:-.5px;margin:4px 2px 12px;}
+.game-card{border:none;width:100%;border-radius:22px;padding:18px 16px;margin-bottom:12px;text-align:left;font-family:inherit;background:rgba(255,255,255,.92);box-shadow:0 10px 28px rgba(78,62,130,.12);display:flex;gap:14px;align-items:center;color:#3F3565;}
+.game-card.locked{opacity:.72;}
+.game-card-icon{width:54px;height:54px;border-radius:18px;background:linear-gradient(135deg,#D9F3FF,#C8C0FF);display:flex;align-items:center;justify-content:center;font-size:27px;flex-shrink:0;}
+.game-card-title{font-size:15px;font-weight:950;letter-spacing:-.25px;}
+.game-card-sub{font-size:12px;font-weight:700;color:#7A719C;line-height:1.5;margin-top:4px;}
+.game-card-state{margin-left:auto;font-size:12px;font-weight:900;color:#7C6BE8;background:#F1EDFF;border-radius:999px;padding:6px 9px;white-space:nowrap;}
+.run-back{position:absolute;top:58px;left:14px;z-index:12;border:none;background:rgba(255,255,255,.9);color:#6A5AA8;font-size:12px;font-weight:900;border-radius:999px;padding:8px 11px;font-family:inherit;box-shadow:0 5px 14px rgba(80,60,120,.12);}
+.run-shell.hide{display:none;}
 .run-shell{height:642px;border-radius:24px;background:linear-gradient(180deg,#F5EEFF 0%,#EAF2FF 48%,#FFEFF7 100%);box-shadow:var(--shm);position:relative;overflow:hidden;border:1px solid rgba(108,92,231,.12);}
 .run-top{position:absolute;top:12px;left:10px;right:10px;z-index:5;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
 .run-stat{background:rgba(255,255,255,.88);border-radius:14px;padding:7px 5px;text-align:center;font-size:11px;font-weight:900;color:#5D4BA8;box-shadow:0 4px 14px rgba(100,80,160,.08);}
@@ -262,20 +273,26 @@ body::before{
 .run-stage-sub{font-size:12px;font-weight:800;color:#8A7CB8;margin-top:3px;}
 .run-world{position:absolute;left:0;right:0;top:0;bottom:96px;overflow:hidden;}
 .run-sky{position:absolute;inset:0;background:linear-gradient(180deg,#F7F0FF 0%,#E6F4FF 55%,#FFEFF6 100%);}
-.run-bg{position:absolute;left:0;right:0;bottom:158px;height:154px;z-index:1;}
-.bg-house{position:absolute;bottom:0;width:52px;height:54px;border-radius:12px 12px 4px 4px;background:#fff;box-shadow:0 6px 20px rgba(95,70,140,.08);}
-.bg-house::before{content:'';position:absolute;left:8px;right:8px;top:-16px;height:24px;background:#D8C8FF;border-radius:10px 10px 2px 2px;transform:skewX(-12deg);}
-.bg-tent{position:absolute;bottom:0;width:62px;height:46px;border-radius:10px 10px 4px 4px;background:#fff;box-shadow:0 6px 20px rgba(95,70,140,.08);}
-.bg-tent::before{content:'';position:absolute;left:0;right:0;top:-18px;height:24px;background:repeating-linear-gradient(90deg,#FFC7DD 0 14px,#FFF 14px 28px);border-radius:14px 14px 3px 3px;}
+.run-bg{position:absolute;left:0;right:0;bottom:126px;height:238px;z-index:1;}
+.bg-house{position:absolute;width:60px;height:62px;border-radius:14px 14px 5px 5px;background:#fff;box-shadow:0 8px 24px rgba(95,70,140,.11);border:1px solid rgba(255,255,255,.7);}
+.bg-house::before{content:'';position:absolute;left:7px;right:7px;top:-18px;height:26px;background:#D8C8FF;border-radius:12px 12px 2px 2px;transform:skewX(-10deg);}
+.bg-house::after{content:'';position:absolute;left:12px;bottom:12px;width:12px;height:14px;background:#BEEAFF;border-radius:4px;box-shadow:24px 0 0 #FFE0EC;}
+.bg-school{position:absolute;width:76px;height:70px;border-radius:16px 16px 6px 6px;background:#FFF6D6;box-shadow:0 9px 26px rgba(95,70,140,.1);}
+.bg-school::before{content:'';position:absolute;left:13px;right:13px;top:-20px;height:28px;background:#B9D8FF;border-radius:14px 14px 3px 3px;}
+.bg-tree{position:absolute;width:24px;height:54px;}
+.bg-tree::before{content:'';position:absolute;left:9px;bottom:0;width:6px;height:24px;background:#B9876B;border-radius:4px;}
+.bg-tree::after{content:'';position:absolute;left:0;top:0;width:24px;height:28px;background:#A8E6BC;border-radius:50%;box-shadow:8px 10px 0 #82DFA5,-6px 14px 0 #C6F0D2;}
+.bg-lamp{position:absolute;width:8px;height:58px;background:#8F83C8;border-radius:6px;opacity:.6;}
+.bg-lamp::before{content:'';position:absolute;left:-8px;top:-7px;width:24px;height:14px;background:#FFF2A8;border-radius:14px;}
+.bg-tent{position:absolute;width:70px;height:52px;border-radius:12px 12px 5px 5px;background:#fff;box-shadow:0 9px 26px rgba(95,70,140,.12);border:1px solid rgba(255,255,255,.7);}
+.bg-tent::before{content:'';position:absolute;left:0;right:0;top:-20px;height:28px;background:repeating-linear-gradient(90deg,#FFC7DD 0 14px,#FFF 14px 28px);border-radius:15px 15px 3px 3px;}
+.bg-tent::after{content:'';position:absolute;left:12px;bottom:8px;width:13px;height:13px;background:#FF8F8F;border-radius:50%;box-shadow:17px 0 0 #FFD36A,34px 0 0 #8EE4B6;}
 .run-road{position:absolute;left:88px;right:88px;top:128px;bottom:0;background:linear-gradient(180deg,#D6C9FF,#BFB0F3);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);z-index:2;}
 .run-lane{position:absolute;left:50%;top:144px;bottom:8px;width:3px;background:repeating-linear-gradient(180deg,rgba(255,255,255,.7) 0 18px,transparent 18px 34px);transform:translateX(-50%);z-index:3;}
-.runner-cloud{position:absolute;bottom:48px;left:50%;width:58px;height:42px;transform:translateX(-50%);z-index:7;filter:drop-shadow(0 12px 10px rgba(73,56,120,.22));transition:left .18s ease;}
-.runner-cloud::before{content:'';position:absolute;left:4px;bottom:3px;width:48px;height:26px;background:#BFE8FF;border:2px solid #78BDE8;border-radius:24px;}
-.runner-cloud::after{content:'';position:absolute;left:16px;top:2px;width:28px;height:28px;background:#C9EDFF;border:2px solid #78BDE8;border-radius:50%;box-shadow:18px 8px 0 -3px #C9EDFF,18px 8px 0 -1px #78BDE8;}
-.runner-face{position:absolute;left:18px;top:17px;z-index:2;font-size:13px;font-weight:900;color:#486B9A;}
-.runner-blush{position:absolute;left:13px;top:27px;width:8px;height:4px;background:#FF9FBD;border-radius:50%;z-index:2;box-shadow:30px 0 0 #FF9FBD;}
+.runner-cloud{position:absolute;bottom:48px;left:50%;width:72px;height:58px;transform:translateX(-50%);z-index:7;filter:drop-shadow(0 12px 10px rgba(73,56,120,.22));transition:left .18s ease;}
+.runner-cloud svg{width:72px;height:58px;display:block;}
 .run-shadow{position:absolute;bottom:38px;left:50%;width:54px;height:12px;background:rgba(83,65,120,.18);border-radius:50%;transform:translateX(-50%);z-index:5;transition:left .18s ease;}
-.run-object{position:absolute;z-index:6;font-size:27px;text-align:center;filter:drop-shadow(0 5px 5px rgba(70,50,100,.18));}
+.run-object{position:absolute;z-index:6;width:38px;height:38px;margin-left:-19px;display:flex;align-items:center;justify-content:center;font-size:27px;text-align:center;filter:drop-shadow(0 5px 5px rgba(70,50,100,.18));transition:opacity .12s ease, transform .12s ease;}
 .run-object.obstacle{font-size:31px;}
 .run-bottom{position:absolute;left:10px;right:10px;bottom:10px;height:78px;z-index:8;display:grid;grid-template-columns:64px 1fr 64px;gap:8px;align-items:center;}
 .move-btn{height:58px;border:none;border-radius:18px;background:#7C6BE8;color:#fff;font-size:24px;font-weight:900;box-shadow:0 8px 18px rgba(124,107,232,.25);font-family:inherit;}
@@ -315,6 +332,15 @@ body::before{
 .nfc-profile-icon{font-size:28px;}
 .nfc-profile-text .title{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.3px;margin-bottom:2px;}
 .nfc-profile-text .sub{font-size:11px;color:rgba(255,255,255,.75);font-weight:500;line-height:1.5;}
+.coupon-wallet-card{background:linear-gradient(135deg,#FFF7D8,#F0EBFF);border-radius:var(--r);padding:15px 16px;box-shadow:var(--sh);display:flex;align-items:center;gap:12px;border:1px solid rgba(124,107,232,.12);}
+.coupon-wallet-card.locked{background:#F7F7FA;color:var(--t3);}
+.coupon-wallet-icon{width:42px;height:42px;border-radius:15px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 12px rgba(80,60,120,.08);flex-shrink:0;}
+.coupon-wallet-main{flex:1;}
+.coupon-wallet-title{font-size:14px;font-weight:950;color:#4B3C78;letter-spacing:-.25px;}
+.coupon-wallet-card.locked .coupon-wallet-title{color:var(--t2);}
+.coupon-wallet-sub{font-size:12px;font-weight:700;color:#756A94;margin-top:4px;line-height:1.45;}
+.coupon-wallet-state{font-size:11px;font-weight:900;color:#fff;background:#7C6BE8;border-radius:999px;padding:6px 9px;white-space:nowrap;}
+.coupon-wallet-card.locked .coupon-wallet-state{background:#D1D5DB;color:#6B7280;}
 
 
 /* ════════ ONBOARDING ════════ */
@@ -889,7 +915,27 @@ body::before{
   <div class="screen" id="s-char">
     <div class="screen-header"><span>게임</span></div>
     <div class="game-slot">
-      <div class="run-shell" id="market-run">
+      <div class="game-picker" id="game-picker">
+        <div class="game-picker-title">플레이할 게임 선택</div>
+        <button class="game-card" onclick="openGame('run')">
+          <div class="game-card-icon">🏃</div>
+          <div>
+            <div class="game-card-title">원종제일 MARKET RUN</div>
+            <div class="game-card-sub">학교에서 시장까지 달리며 과일, 별, 스탬프를 모아요.</div>
+          </div>
+          <div class="game-card-state">플레이</div>
+        </button>
+        <button class="game-card locked" onclick="openGame('puzzle')">
+          <div class="game-card-icon">🍬</div>
+          <div>
+            <div class="game-card-title">냠구름 SWEET PUZZLE</div>
+            <div class="game-card-sub">같은 재료를 맞추는 퍼즐 게임 자리입니다.</div>
+          </div>
+          <div class="game-card-state">준비중</div>
+        </button>
+      </div>
+      <div class="run-shell hide" id="market-run">
+        <button class="run-back" onclick="showGamePicker()">‹ 게임 선택</button>
         <div class="run-top">
           <div class="run-stat">⭐ <span id="run-stars">0</span></div>
           <div class="run-stat">🍎 <span id="run-fruits">0</span></div>
@@ -907,8 +953,17 @@ body::before{
           <div class="run-lane"></div>
           <div class="run-shadow" id="run-shadow"></div>
           <div class="runner-cloud" id="runner-cloud">
-            <div class="runner-face">⌒‿•</div>
-            <div class="runner-blush"></div>
+            <svg viewBox="0 0 96 72" aria-label="냠구름 캐릭터">
+              <ellipse cx="48" cy="52" rx="34" ry="15" fill="#A7DFFF" stroke="#61AFDD" stroke-width="3"/>
+              <circle cx="32" cy="39" r="18" fill="#BEEBFF" stroke="#61AFDD" stroke-width="3"/>
+              <circle cx="49" cy="31" r="22" fill="#C8F0FF" stroke="#61AFDD" stroke-width="3"/>
+              <circle cx="66" cy="42" r="17" fill="#B9E7FF" stroke="#61AFDD" stroke-width="3"/>
+              <path d="M34 45 q5 5 10 0" fill="none" stroke="#315C8A" stroke-width="3" stroke-linecap="round"/>
+              <path d="M58 43 q4 -4 8 0" fill="none" stroke="#315C8A" stroke-width="3" stroke-linecap="round"/>
+              <path d="M45 52 q7 6 14 0" fill="none" stroke="#315C8A" stroke-width="3" stroke-linecap="round"/>
+              <ellipse cx="31" cy="53" rx="6" ry="3.5" fill="#FF9FBD" opacity=".9"/>
+              <ellipse cx="68" cy="53" rx="6" ry="3.5" fill="#FF9FBD" opacity=".9"/>
+            </svg>
           </div>
         </div>
         <div class="run-bottom">
@@ -976,6 +1031,17 @@ body::before{
           <div class="allergy-chip allergy-chip-main chip-off" data-allergy="게" onclick="toggleMyAllergy(this,'게')">게</div>
           <div class="allergy-chip allergy-chip-main chip-off" data-allergy="메밀" onclick="toggleMyAllergy(this,'메밀')">메밀</div>
         </div>
+      </div>
+    </div>
+    <div class="myinfo-section">
+      <div class="mis-title">쿠폰 지갑</div>
+      <div class="coupon-wallet-card locked" id="coupon-wallet-card">
+        <div class="coupon-wallet-icon">🎫</div>
+        <div class="coupon-wallet-main">
+          <div class="coupon-wallet-title" id="coupon-wallet-title">보유 쿠폰 없음</div>
+          <div class="coupon-wallet-sub" id="coupon-wallet-sub">10번 태그하면 1,000원 쿠폰이 지급돼요.</div>
+        </div>
+        <div class="coupon-wallet-state" id="coupon-wallet-state">잠김</div>
       </div>
     </div>
     <div class="myinfo-section">
@@ -1123,6 +1189,7 @@ function updateGarden(){
   if(waterCount>=MAX_WATER){
     couponIssued=true;
     if(coupon)coupon.classList.add('show');
+    if(typeof lsSave==='function'&&typeof LS_KEY==='string'&&LS_KEY)lsSave({couponIssued:true,waterCount:MAX_WATER,couponName:'원종제일시장 1,000원 쿠폰'});
     var cc=document.getElementById('coupon-card');
     var cb=document.getElementById('coupon-btn');
     if(cc)cc.classList.remove('locked');
@@ -1130,6 +1197,7 @@ function updateGarden(){
     var mg=document.getElementById('garden-msg');
     if(mg)mg.textContent='나무가 완성됐어요! 쿠폰을 받아보세요! 🎉';
   }
+  if(typeof updateCouponWallet==='function')updateCouponWallet();
   renderTree();
 }
 function renderTree(){
@@ -1148,6 +1216,9 @@ function renderTree(){
 }
 function claimCoupon(){
   if(waterCount<MAX_WATER)return;
+  couponIssued=true;
+  if(typeof lsSave==='function'&&typeof LS_KEY==='string'&&LS_KEY)lsSave({couponIssued:true,waterCount:MAX_WATER,couponName:'원종제일시장 1,000원 쿠폰'});
+  updateCouponWallet();
   alert('🎉 축하합니다! 원종제일시장 1,000원 쿠폰이 발급됐어요!\n쿠폰번호: JEIL-2025-1000');
 }
 // renderTree called in DOMContentLoaded
@@ -1162,6 +1233,29 @@ var runStages=[
   {title:'원종제일시장',sub:'과일을 모아요'}
 ];
 var runGame={lane:1,objects:[],running:false,score:0,stars:0,fruits:0,stamps:0,time:45,lastTick:0,lastSpawn:0,stageIndex:-1,raf:null,bound:false};
+function openGame(kind){
+  if(kind!=='run'){alert('두 번째 게임은 다음 버전에서 연결할 예정입니다.');return;}
+  var picker=document.getElementById('game-picker');
+  var run=document.getElementById('market-run');
+  var popup=document.getElementById('run-popup');
+  var result=document.getElementById('run-result');
+  if(picker)picker.classList.add('hide');
+  if(run)run.classList.remove('hide');
+  if(popup)popup.classList.remove('hide');
+  if(result)result.classList.add('hide');
+  clearRunObjects();
+  runGame.running=false;
+  updateRunUI();
+}
+function showGamePicker(){
+  runGame.running=false;
+  if(runGame.raf)cancelAnimationFrame(runGame.raf);
+  clearRunObjects();
+  var picker=document.getElementById('game-picker');
+  var run=document.getElementById('market-run');
+  if(picker)picker.classList.remove('hide');
+  if(run)run.classList.add('hide');
+}
 function initMarketRun(){
   if(runGame.bound)return;
   runGame.bound=true;
@@ -1205,15 +1299,20 @@ function renderRunBg(idx){
   if(!bg)return;
   var html='';
   if(idx<2){
-    html+='<div class="bg-house" style="left:8%;top:48px;background:#FFE7EF"></div>';
-    html+='<div class="bg-house" style="right:10%;top:70px;background:#E4F3FF"></div>';
-    html+='<div class="bg-house" style="left:18%;top:150px;background:#FFF0BE"></div>';
-    html+='<div class="bg-house" style="right:18%;top:175px;background:#DFF7E8"></div>';
+    html+='<div class="bg-school" style="left:6%;top:24px"></div>';
+    html+='<div class="bg-house" style="right:8%;top:54px;background:#E4F3FF"></div>';
+    html+='<div class="bg-house" style="left:13%;top:142px;background:#FFE7EF"></div>';
+    html+='<div class="bg-tree" style="right:19%;top:147px"></div>';
+    html+='<div class="bg-lamp" style="left:25%;top:112px"></div>';
+    html+='<div class="bg-tree" style="left:6%;top:198px"></div>';
+    html+='<div class="bg-house" style="right:14%;top:190px;background:#DFF7E8"></div>';
   }else{
-    html+='<div class="bg-tent" style="left:5%;top:54px;background:#FFB8CF"></div>';
-    html+='<div class="bg-tent" style="right:6%;top:82px;background:#BFB6FF"></div>';
-    html+='<div class="bg-tent" style="left:10%;top:168px;background:#FFD278"></div>';
-    html+='<div class="bg-tent" style="right:12%;top:210px;background:#9EE6D4"></div>';
+    html+='<div class="bg-tent" style="left:5%;top:36px;background:#FFB8CF"></div>';
+    html+='<div class="bg-tent" style="right:6%;top:68px;background:#BFB6FF"></div>';
+    html+='<div class="bg-tree" style="left:22%;top:116px"></div>';
+    html+='<div class="bg-lamp" style="right:24%;top:132px"></div>';
+    html+='<div class="bg-tent" style="left:9%;top:168px;background:#FFD278"></div>';
+    html+='<div class="bg-tent" style="right:11%;top:204px;background:#9EE6D4"></div>';
   }
   bg.innerHTML=html;
 }
@@ -1275,9 +1374,12 @@ function runLoop(ts){
     var obj=runGame.objects[i];
     obj.top+=delta*.115;
     obj.el.style.top=obj.top+'px';
-    if(!obj.hit&&obj.top>350&&obj.top<430&&obj.lane===runGame.lane){
+    if(!obj.hit&&obj.lane===runGame.lane&&isRunCollision(obj)){
       obj.hit=true;
       handleRunHit(obj);
+      if(obj.el.parentNode)obj.el.parentNode.removeChild(obj.el);
+      runGame.objects.splice(i,1);
+      continue;
     }
     if(obj.top>520){
       if(obj.el.parentNode)obj.el.parentNode.removeChild(obj.el);
@@ -1288,8 +1390,16 @@ function runLoop(ts){
   if(runGame.time<=0){endMarketRun();return;}
   runGame.raf=requestAnimationFrame(runLoop);
 }
+function isRunCollision(obj){
+  var runner=document.getElementById('runner-cloud');
+  if(!runner||!obj.el)return false;
+  var a=runner.getBoundingClientRect();
+  var b=obj.el.getBoundingClientRect();
+  var padX=14, padY=10;
+  return !(a.right-padX<b.left+padX||a.left+padX>b.right-padX||a.bottom-padY<b.top+padY||a.top+padY>b.bottom-padY);
+}
 function handleRunHit(obj){
-  obj.el.style.transform='translateX(-50%) scale(1.25)';
+  obj.el.style.transform='scale(1.25)';
   obj.el.style.opacity='0';
   if(obj.kind==='star'){runGame.stars++;runGame.score+=12;}
   else if(obj.kind==='fruit'){runGame.fruits++;runGame.score+=18;}
@@ -1505,6 +1615,28 @@ function applyUserData() {
       span.className   = 'result-val ' + (hits.length>0?'warn':'safe');
     }
   }
+  updateCouponWallet();
+}
+
+function updateCouponWallet() {
+  var u = (typeof LS_KEY==='string'&&LS_KEY)?lsLoad():{};
+  var active = couponIssued || u.couponIssued || waterCount >= MAX_WATER;
+  var card = document.getElementById('coupon-wallet-card');
+  var title = document.getElementById('coupon-wallet-title');
+  var sub = document.getElementById('coupon-wallet-sub');
+  var state = document.getElementById('coupon-wallet-state');
+  if(!card||!title||!sub||!state)return;
+  if(active){
+    card.classList.remove('locked');
+    title.textContent='원종제일시장 1,000원 쿠폰';
+    sub.textContent='10번 태그 달성으로 지급됨 · 결제 시 제시';
+    state.textContent='사용 가능';
+  }else{
+    card.classList.add('locked');
+    title.textContent='보유 쿠폰 없음';
+    sub.textContent=Math.max(MAX_WATER-waterCount,0)+'번 더 태그하면 1,000원 쿠폰이 지급돼요.';
+    state.textContent='잠김';
+  }
 }
 
 function toggleMyAllergy(chip, a) {
@@ -1648,6 +1780,9 @@ function obInit() {
   obInitDates();
   obBindEvents();
   var u = lsLoad();
+  if(typeof u.waterCount==='number')waterCount=Math.max(0,Math.min(MAX_WATER,u.waterCount));
+  if(u.couponIssued)couponIssued=true;
+  updateGarden();
   if(u.onboardingDone){
     obClose();
     applyUserData();
