@@ -254,16 +254,21 @@ body::before{
 .community-feed-name{font-size:12px;font-weight:800;color:var(--t1);margin-bottom:3px;}
 .community-feed-text{font-size:12px;color:var(--t2);font-weight:600;line-height:1.55;}
 .game-slot{min-height:620px;background:linear-gradient(180deg,#F3EEFF 0%,#F7F4FF 58%,#FFF8FB 100%);padding:12px 14px 54px;color:#3A3158;position:relative;overflow:hidden;}
-.game-picker{display:block;}
+.game-picker{display:flex;flex-direction:column;gap:12px;}
 .game-picker.hide{display:none;}
-.game-picker-title{font-size:18px;font-weight:950;color:#3F3565;letter-spacing:-.5px;margin:4px 2px 12px;}
-.game-card{border:none;width:100%;border-radius:22px;padding:18px 16px;margin-bottom:12px;text-align:left;font-family:inherit;background:rgba(255,255,255,.92);box-shadow:0 10px 28px rgba(78,62,130,.12);display:flex;gap:14px;align-items:center;color:#3F3565;}
+.game-picker-hero{border-radius:24px;background:linear-gradient(135deg,#FFFFFF 0%,#EFEAFF 100%);box-shadow:0 12px 30px rgba(78,62,130,.12);padding:18px 17px;position:relative;overflow:hidden;}
+.game-picker-hero::after{content:'';position:absolute;right:-22px;top:-28px;width:110px;height:110px;border-radius:50%;background:rgba(124,107,232,.12);}
+.game-picker-title{font-size:20px;font-weight:950;color:#3F3565;letter-spacing:-.6px;position:relative;z-index:1;}
+.game-picker-sub{font-size:12px;font-weight:750;color:#7A719C;line-height:1.55;margin-top:6px;position:relative;z-index:1;}
+.game-picker-meta{display:flex;gap:7px;margin-top:13px;position:relative;z-index:1;}
+.game-picker-chip{font-size:10px;font-weight:900;color:#6A5AA8;background:#fff;border-radius:999px;padding:6px 8px;box-shadow:0 4px 12px rgba(80,60,130,.08);}
+.game-card{border:none;width:100%;border-radius:22px;padding:16px;text-align:left;font-family:inherit;background:rgba(255,255,255,.94);box-shadow:0 10px 28px rgba(78,62,130,.12);display:grid;grid-template-columns:62px minmax(0,1fr);gap:12px;align-items:center;color:#3F3565;}
 .game-card.locked{opacity:.72;}
 .game-card.playable{opacity:1;}
-.game-card-icon{width:54px;height:54px;border-radius:18px;background:linear-gradient(135deg,#D9F3FF,#C8C0FF);display:flex;align-items:center;justify-content:center;font-size:27px;flex-shrink:0;}
-.game-card-title{font-size:15px;font-weight:950;letter-spacing:-.25px;}
+.game-card-icon{width:58px;height:58px;border-radius:19px;background:linear-gradient(135deg,#F8FBFF,#ECE7FF);display:flex;align-items:center;justify-content:center;font-size:27px;grid-row:1 / span 2;box-shadow:inset 0 -5px 10px rgba(124,107,232,.08);}
+.game-card-title{font-size:15px;font-weight:950;letter-spacing:-.25px;line-height:1.25;word-break:keep-all;}
 .game-card-sub{font-size:12px;font-weight:700;color:#7A719C;line-height:1.5;margin-top:4px;}
-.game-card-state{margin-left:auto;font-size:12px;font-weight:900;color:#7C6BE8;background:#F1EDFF;border-radius:999px;padding:6px 9px;white-space:nowrap;}
+.game-card-state{grid-column:2;margin-left:0;justify-self:start;font-size:12px;font-weight:900;color:#7C6BE8;background:#F1EDFF;border-radius:999px;padding:6px 9px;white-space:nowrap;}
 .run-back{position:absolute;top:58px;left:14px;z-index:12;border:none;background:rgba(255,255,255,.9);color:#6A5AA8;font-size:12px;font-weight:900;border-radius:999px;padding:8px 11px;font-family:inherit;box-shadow:0 5px 14px rgba(80,60,120,.12);}
 .run-shell.hide{display:none;}
 .run-shell{height:642px;border-radius:24px;background:linear-gradient(180deg,#F5EEFF 0%,#EAF2FF 48%,#FFEFF7 100%);box-shadow:var(--shm);position:relative;overflow:hidden;border:1px solid rgba(108,92,231,.12);}
@@ -358,6 +363,15 @@ body::before{
 .p-sub-btn{background:#F1EDFF;color:#6A5AA8;font-size:13px;padding:11px;}
 .ing-icon{position:relative;width:34px;height:34px;display:block;}
 .ing-small{width:18px;height:18px;transform:scale(.82);}
+.ing-img{width:44px;height:44px;object-fit:contain;display:block;filter:drop-shadow(0 6px 6px rgba(65,45,90,.16));}
+.p-tile .ing-img{width:44px;height:44px;}
+.p-stage-icon .ing-img{width:54px;height:54px;}
+.p-ingredient-pill .ing-img{width:20px;height:20px;}
+.game-card-icon .ing-img{width:52px;height:52px;}
+.run-mini-icon{position:relative;width:42px;height:32px;filter:drop-shadow(0 6px 6px rgba(65,45,90,.15));}
+.run-mini-icon::before{content:'';position:absolute;left:3px;bottom:2px;width:36px;height:20px;background:#BFE8FF;border:2px solid #78BDE8;border-radius:20px;}
+.run-mini-icon::after{content:'';position:absolute;left:13px;top:0;width:20px;height:20px;background:#C9EDFF;border:2px solid #78BDE8;border-radius:50%;box-shadow:13px 7px 0 -4px #C9EDFF,13px 7px 0 -2px #78BDE8;}
+.p-stage-card .game-card-state{grid-column:auto;margin-left:auto;justify-self:auto;}
 .ing-rice::before{content:'';position:absolute;left:8px;top:6px;width:18px;height:22px;background:#F8FBFF;border:2px solid #D8E3F8;border-radius:11px;box-shadow:5px 3px 0 -1px #F8FBFF,-5px 4px 0 -1px #F8FBFF;}
 .ing-gochujang::before{content:'';position:absolute;left:7px;top:7px;width:20px;height:22px;background:#F26E7F;border-radius:8px 8px 12px 12px;box-shadow:inset 0 -5px 0 rgba(194,45,70,.18);}
 .ing-gochujang::after{content:'';position:absolute;left:11px;top:3px;width:12px;height:7px;background:#FFD2A1;border-radius:5px;}
@@ -978,9 +992,17 @@ body::before{
     <div class="screen-header"><span>게임</span></div>
     <div class="game-slot">
       <div class="game-picker" id="game-picker">
-        <div class="game-picker-title">플레이할 게임 선택</div>
+        <div class="game-picker-hero">
+          <div class="game-picker-title">플레이할 게임 선택</div>
+          <div class="game-picker-sub">시장 경험을 게임처럼 즐기고, 재료와 방문 기록을 자연스럽게 모아요.</div>
+          <div class="game-picker-meta">
+            <span class="game-picker-chip">러닝</span>
+            <span class="game-picker-chip">퍼즐</span>
+            <span class="game-picker-chip">랭킹</span>
+          </div>
+        </div>
         <button class="game-card" onclick="openGame('run')">
-          <div class="game-card-icon">🏃</div>
+          <div class="game-card-icon"><span class="run-mini-icon"></span></div>
           <div>
             <div class="game-card-title">원종제일 MARKET RUN</div>
             <div class="game-card-sub">학교에서 시장까지 달리며 과일, 별, 스탬프를 모아요.</div>
@@ -988,7 +1010,7 @@ body::before{
           <div class="game-card-state">플레이</div>
         </button>
         <button class="game-card playable" onclick="openGame('puzzle')">
-          <div class="game-card-icon"><span class="ing-icon ing-small ing-rice"></span></div>
+          <div class="game-card-icon"><img class="ing-img" src="assets/ingredients/tteok.png" alt="떡"></div>
           <div>
             <div class="game-card-title">제일 바이츠 - 음식 재료 연결하기</div>
             <div class="game-card-sub">재료 3개를 맞춰 시장 음식을 완성해요.</div>
@@ -1548,10 +1570,10 @@ initMarketRun();
 
 var puzzleStages=[
   {title:'1단계 떡볶이',food:'떡볶이',ingredients:[
-    {id:'rice',name:'떡',cls:'ing-rice'},
-    {id:'gochujang',name:'고추장',cls:'ing-gochujang'},
-    {id:'greenonion',name:'파',cls:'ing-greenonion'},
-    {id:'fishcake',name:'어묵',cls:'ing-fishcake'}
+    {id:'rice',name:'떡',cls:'ing-rice',img:'assets/ingredients/tteok.png'},
+    {id:'gochujang',name:'고추장',cls:'ing-gochujang',img:'assets/ingredients/gochujang.png'},
+    {id:'greenonion',name:'파',cls:'ing-greenonion',img:'assets/ingredients/greenonion.png'},
+    {id:'fishcake',name:'어묵',cls:'ing-fishcake',img:'assets/ingredients/fishcake.png'}
   ]},
   {title:'2단계 닭꼬치',food:'닭꼬치',ingredients:[
     {id:'chicken',name:'닭고기',cls:'ing-chicken'},
@@ -1569,6 +1591,7 @@ function initIngredientPuzzle(){
   renderPuzzleStages();
 }
 function ingredientIcon(item,small){
+  if(item.img)return '<img class="ing-img '+(small?'ing-small-img':'')+'" src="'+item.img+'" alt="'+item.name+'">';
   return '<span class="ing-icon '+(small?'ing-small ':'')+item.cls+'"></span>';
 }
 function renderPuzzleStages(){
