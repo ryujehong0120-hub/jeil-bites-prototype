@@ -233,6 +233,11 @@ body::before{
 .home-grow-info{flex:1;}
 .home-grow-title{font-size:15px;font-weight:900;color:var(--t1);letter-spacing:-.3px;margin-bottom:8px;}
 .home-grow-sub{font-size:12px;color:var(--t2);font-weight:700;margin-top:8px;}
+.home-coupon{display:none;margin:12px 16px 0;background:linear-gradient(135deg,#6C5CE7,#9D8CFF);color:#fff;border-radius:var(--r);padding:16px;box-shadow:0 8px 24px rgba(108,92,231,.28);align-items:center;gap:12px;}
+.home-coupon.show{display:flex;animation:popIn .35s cubic-bezier(.34,1.4,.64,1);}
+.home-coupon-icon{font-size:32px;flex-shrink:0;}
+.home-coupon-title{font-size:15px;font-weight:900;letter-spacing:-.3px;}
+.home-coupon-sub{font-size:12px;color:rgba(255,255,255,.82);font-weight:700;margin-top:3px;}
 .home-tag-btn{width:100%;padding:11px;margin-top:10px;font-size:13px;}
 .community-screen{padding:14px 16px 56px;}
 .community-card{background:var(--surf);border-radius:var(--r);padding:15px 16px;box-shadow:var(--sh);margin-bottom:12px;}
@@ -248,7 +253,44 @@ body::before{
 .community-feed-main{flex:1;}
 .community-feed-name{font-size:12px;font-weight:800;color:var(--t1);margin-bottom:3px;}
 .community-feed-text{font-size:12px;color:var(--t2);font-weight:600;line-height:1.55;}
-.game-slot{min-height:620px;background:var(--bg);}
+.game-slot{min-height:620px;background:linear-gradient(180deg,#F3EEFF 0%,#F7F4FF 58%,#FFF8FB 100%);padding:12px 14px 54px;color:#3A3158;position:relative;overflow:hidden;}
+.run-shell{height:642px;border-radius:24px;background:linear-gradient(180deg,#F5EEFF 0%,#EAF2FF 48%,#FFEFF7 100%);box-shadow:var(--shm);position:relative;overflow:hidden;border:1px solid rgba(108,92,231,.12);}
+.run-top{position:absolute;top:12px;left:10px;right:10px;z-index:5;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.run-stat{background:rgba(255,255,255,.88);border-radius:14px;padding:7px 5px;text-align:center;font-size:11px;font-weight:900;color:#5D4BA8;box-shadow:0 4px 14px rgba(100,80,160,.08);}
+.run-stage{position:absolute;top:64px;left:16px;right:16px;z-index:4;text-align:center;}
+.run-stage-title{font-size:16px;font-weight:950;color:#51427E;letter-spacing:-.4px;}
+.run-stage-sub{font-size:12px;font-weight:800;color:#8A7CB8;margin-top:3px;}
+.run-world{position:absolute;left:0;right:0;top:0;bottom:96px;overflow:hidden;}
+.run-sky{position:absolute;inset:0;background:linear-gradient(180deg,#F7F0FF 0%,#E6F4FF 55%,#FFEFF6 100%);}
+.run-bg{position:absolute;left:0;right:0;bottom:158px;height:154px;z-index:1;}
+.bg-house{position:absolute;bottom:0;width:52px;height:54px;border-radius:12px 12px 4px 4px;background:#fff;box-shadow:0 6px 20px rgba(95,70,140,.08);}
+.bg-house::before{content:'';position:absolute;left:8px;right:8px;top:-16px;height:24px;background:#D8C8FF;border-radius:10px 10px 2px 2px;transform:skewX(-12deg);}
+.bg-tent{position:absolute;bottom:0;width:62px;height:46px;border-radius:10px 10px 4px 4px;background:#fff;box-shadow:0 6px 20px rgba(95,70,140,.08);}
+.bg-tent::before{content:'';position:absolute;left:0;right:0;top:-18px;height:24px;background:repeating-linear-gradient(90deg,#FFC7DD 0 14px,#FFF 14px 28px);border-radius:14px 14px 3px 3px;}
+.run-road{position:absolute;left:88px;right:88px;top:128px;bottom:0;background:linear-gradient(180deg,#D6C9FF,#BFB0F3);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);z-index:2;}
+.run-lane{position:absolute;left:50%;top:144px;bottom:8px;width:3px;background:repeating-linear-gradient(180deg,rgba(255,255,255,.7) 0 18px,transparent 18px 34px);transform:translateX(-50%);z-index:3;}
+.runner-cloud{position:absolute;bottom:48px;left:50%;width:58px;height:42px;transform:translateX(-50%);z-index:7;filter:drop-shadow(0 12px 10px rgba(73,56,120,.22));transition:left .18s ease;}
+.runner-cloud::before{content:'';position:absolute;left:4px;bottom:3px;width:48px;height:26px;background:#BFE8FF;border:2px solid #78BDE8;border-radius:24px;}
+.runner-cloud::after{content:'';position:absolute;left:16px;top:2px;width:28px;height:28px;background:#C9EDFF;border:2px solid #78BDE8;border-radius:50%;box-shadow:18px 8px 0 -3px #C9EDFF,18px 8px 0 -1px #78BDE8;}
+.runner-face{position:absolute;left:18px;top:17px;z-index:2;font-size:13px;font-weight:900;color:#486B9A;}
+.runner-blush{position:absolute;left:13px;top:27px;width:8px;height:4px;background:#FF9FBD;border-radius:50%;z-index:2;box-shadow:30px 0 0 #FF9FBD;}
+.run-shadow{position:absolute;bottom:38px;left:50%;width:54px;height:12px;background:rgba(83,65,120,.18);border-radius:50%;transform:translateX(-50%);z-index:5;transition:left .18s ease;}
+.run-object{position:absolute;z-index:6;font-size:27px;text-align:center;filter:drop-shadow(0 5px 5px rgba(70,50,100,.18));}
+.run-object.obstacle{font-size:31px;}
+.run-bottom{position:absolute;left:10px;right:10px;bottom:10px;height:78px;z-index:8;display:grid;grid-template-columns:64px 1fr 64px;gap:8px;align-items:center;}
+.move-btn{height:58px;border:none;border-radius:18px;background:#7C6BE8;color:#fff;font-size:24px;font-weight:900;box-shadow:0 8px 18px rgba(124,107,232,.25);font-family:inherit;}
+.move-help{height:58px;border-radius:18px;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;font-weight:900;color:#6A5AA8;padding:0 10px;box-shadow:0 6px 16px rgba(80,60,120,.1);}
+.run-popup,.run-result{position:absolute;inset:0;z-index:20;background:rgba(242,235,255,.76);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:22px;}
+.run-popup.hide,.run-result.hide{display:none;}
+.run-modal{width:100%;background:rgba(255,255,255,.94);border-radius:24px;padding:24px 20px;text-align:center;box-shadow:0 18px 46px rgba(80,60,140,.18);}
+.run-modal h2{font-size:24px;font-weight:950;color:#51427E;letter-spacing:-.7px;margin-bottom:10px;}
+.run-modal p{font-size:13px;font-weight:700;color:#76699D;line-height:1.65;margin-bottom:12px;}
+.run-start,.run-again{border:none;border-radius:18px;background:#7C6BE8;color:#fff;font-size:15px;font-weight:900;padding:14px 22px;width:100%;font-family:inherit;box-shadow:0 9px 20px rgba(124,107,232,.28);}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0;}
+.result-box{background:#F3EFFF;border-radius:16px;padding:10px;font-size:12px;font-weight:900;color:#5D4BA8;}
+.ranking-list{display:grid;gap:8px;margin:12px 0 16px;}
+.rank-card{background:#F8F5FF;border-radius:16px;padding:10px 12px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:900;color:#51427E;}
+.run-message{font-size:13px;font-weight:900;color:#7C6BE8;margin:10px 0 12px;}
 /* ── MY INFO ── */
 .myinfo-hero{background:linear-gradient(150deg,#C2E1F5 0%,#B8D8EE 40%,#C6C0EF 100%);padding:24px 20px 20px;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;}
 .myinfo-hero::before{content:'';position:absolute;right:-20px;top:-20px;width:100px;height:100px;background:rgba(255,255,255,.18);border-radius:50%;}
@@ -706,7 +748,7 @@ body::before{
           <span class="wp-count" id="water-count">7 / 10</span>
         </div>
         <div class="wp-bar-bg"><div class="wp-bar-fill" id="water-bar" style="width:70%"></div></div>
-        <div class="home-grow-sub">3번 더 태그하면 쿠폰 열림</div>
+        <div class="home-grow-sub" id="home-grow-sub">3번 더 태그하면 1,000원 쿠폰 열림</div>
         <button class="tag-btn home-tag-btn" id="tag-btn" onclick="simulateTag()">태그 시뮬레이션</button>
       </div>
     </div>
@@ -719,6 +761,13 @@ body::before{
       <div class="result-row"><span>마지막 점검</span><span class="result-val">2025.04.12</span></div>
     </div>
     <div class="char-feed-anim" id="feed-anim">💧 제일이에게 물 주기 완료! +2 pt 🌱</div>
+    <div class="home-coupon" id="home-coupon">
+      <div class="home-coupon-icon">🎫</div>
+      <div>
+        <div class="home-coupon-title">1,000원 쿠폰 지급 완료</div>
+        <div class="home-coupon-sub">10번 태그 달성 · 원종제일시장 사용 가능</div>
+      </div>
+    </div>
     <div class="today-card">
       <div class="today-title">이번 주 통계</div>
       <div class="stat-row">
@@ -839,7 +888,62 @@ body::before{
   <!-- GAME -->
   <div class="screen" id="s-char">
     <div class="screen-header"><span>게임</span></div>
-    <div class="game-slot"></div>
+    <div class="game-slot">
+      <div class="run-shell" id="market-run">
+        <div class="run-top">
+          <div class="run-stat">⭐ <span id="run-stars">0</span></div>
+          <div class="run-stat">🍎 <span id="run-fruits">0</span></div>
+          <div class="run-stat">🏅 <span id="run-stamps">0</span></div>
+          <div class="run-stat">⏱ <span id="run-time">45</span></div>
+        </div>
+        <div class="run-stage">
+          <div class="run-stage-title" id="run-stage-title">학교</div>
+          <div class="run-stage-sub" id="run-stage-sub">학교 앞을 지나가요</div>
+        </div>
+        <div class="run-world" id="run-world">
+          <div class="run-sky"></div>
+          <div class="run-bg" id="run-bg"></div>
+          <div class="run-road"></div>
+          <div class="run-lane"></div>
+          <div class="run-shadow" id="run-shadow"></div>
+          <div class="runner-cloud" id="runner-cloud">
+            <div class="runner-face">⌒‿•</div>
+            <div class="runner-blush"></div>
+          </div>
+        </div>
+        <div class="run-bottom">
+          <button class="move-btn" id="run-left">←</button>
+          <div class="move-help">← → 키 또는 버튼으로 이동해요.</div>
+          <button class="move-btn" id="run-right">→</button>
+        </div>
+        <div class="run-popup" id="run-popup">
+          <div class="run-modal">
+            <h2>원종제일 MARKET RUN</h2>
+            <p>시장 골목을 달리며 재료와 아이템을 수집해요.</p>
+            <p>← → 키 또는 버튼으로 이동해요.</p>
+            <button class="run-start" id="run-start">시작하기</button>
+          </div>
+        </div>
+        <div class="run-result hide" id="run-result">
+          <div class="run-modal">
+            <h2>잘했어요!</h2>
+            <div class="result-grid">
+              <div class="result-box">점수<br><span id="result-score">0</span></div>
+              <div class="result-box">과일<br><span id="result-fruits">0</span></div>
+              <div class="result-box">스탬프<br><span id="result-stamps">0</span></div>
+              <div class="result-box">랭킹<br><span id="result-rank">4등</span></div>
+            </div>
+            <div class="run-message">과일을 모으고 달콤이는 피해요!</div>
+            <div class="ranking-list">
+              <div class="rank-card">🥇 1등 하늘</div>
+              <div class="rank-card">🥈 2등 초롱</div>
+              <div class="rank-card">🥉 3등 보라</div>
+            </div>
+            <button class="run-again" id="run-again">다시 달리기</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- MY INFO -->
@@ -988,14 +1092,16 @@ function showDetail(key){
   document.getElementById('detail-content').innerHTML=warnHtml+storeHero+infoSec+originSec+menuSec+'<div style="height:16px;"></div>';
   switchTab('detail');
 }
-var waterCount=7; var MAX_WATER=10; var tagged=false;
+var waterCount=7; var MAX_WATER=10; var tagged=false; var couponIssued=false;
 function simulateTag(){
   if(tagged)return; tagged=true;
   var btn=document.getElementById('tag-btn');
   btn.textContent='태그 중...'; btn.disabled=true;
   setTimeout(function(){
-    document.getElementById('nfc-result').classList.add('show');
-    document.getElementById('feed-anim').classList.add('show');
+    var nfcResult=document.getElementById('nfc-result');
+    var feedAnim=document.getElementById('feed-anim');
+    if(nfcResult)nfcResult.classList.add('show');
+    if(feedAnim)feedAnim.classList.add('show');
     btn.textContent='💧 태그 완료!';
     waterCount=Math.min(waterCount+1,MAX_WATER);
     var fill=document.getElementById('expbar');
@@ -1008,9 +1114,15 @@ function updateGarden(){
   var pct=waterCount/MAX_WATER;
   var b=document.getElementById('water-bar');
   var c=document.getElementById('water-count');
+  var sub=document.getElementById('home-grow-sub');
+  var coupon=document.getElementById('home-coupon');
+  var remain=Math.max(MAX_WATER-waterCount,0);
   if(b)b.style.width=(pct*100)+'%';
   if(c)c.textContent=waterCount+' / '+MAX_WATER;
+  if(sub)sub.textContent=remain>0?remain+'번 더 태그하면 1,000원 쿠폰 열림':'1,000원 쿠폰이 열렸어요';
   if(waterCount>=MAX_WATER){
+    couponIssued=true;
+    if(coupon)coupon.classList.add('show');
     var cc=document.getElementById('coupon-card');
     var cb=document.getElementById('coupon-btn');
     if(cc)cc.classList.remove('locked');
@@ -1036,11 +1148,179 @@ function renderTree(){
 }
 function claimCoupon(){
   if(waterCount<MAX_WATER)return;
-  alert('🎉 축하합니다! 원종제일시장 10% 할인 쿠폰이 발급됐어요!\n쿠폰번호: JEIL-2025-🎫');
+  alert('🎉 축하합니다! 원종제일시장 1,000원 쿠폰이 발급됐어요!\n쿠폰번호: JEIL-2025-1000');
 }
 // renderTree called in DOMContentLoaded
 
 renderTree();
+updateGarden();
+
+var runStages=[
+  {title:'학교',sub:'학교 앞을 지나가요'},
+  {title:'주택가',sub:'조용한 길로 가요'},
+  {title:'원종제일시장 입구',sub:'큰 간판을 찾아요'},
+  {title:'원종제일시장',sub:'과일을 모아요'}
+];
+var runGame={lane:1,objects:[],running:false,score:0,stars:0,fruits:0,stamps:0,time:45,lastTick:0,lastSpawn:0,stageIndex:-1,raf:null,bound:false};
+function initMarketRun(){
+  if(runGame.bound)return;
+  runGame.bound=true;
+  var left=document.getElementById('run-left');
+  var right=document.getElementById('run-right');
+  var start=document.getElementById('run-start');
+  var again=document.getElementById('run-again');
+  if(left)left.addEventListener('click',function(){moveRun(-1);});
+  if(right)right.addEventListener('click',function(){moveRun(1);});
+  if(start)start.addEventListener('click',startMarketRun);
+  if(again)again.addEventListener('click',startMarketRun);
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft')moveRun(-1);
+    if(e.key==='ArrowRight')moveRun(1);
+  });
+  moveRun(0);
+  setRunStage(0);
+  updateRunUI();
+}
+function laneLeft(lane){return [27,50,73][lane];}
+function moveRun(dir){
+  runGame.lane=Math.max(0,Math.min(2,runGame.lane+dir));
+  var runner=document.getElementById('runner-cloud');
+  var shadow=document.getElementById('run-shadow');
+  var left=laneLeft(runGame.lane)+'%';
+  if(runner)runner.style.left=left;
+  if(shadow)shadow.style.left=left;
+}
+function setRunStage(idx){
+  if(runGame.stageIndex===idx)return;
+  runGame.stageIndex=idx;
+  var st=runStages[idx];
+  var title=document.getElementById('run-stage-title');
+  var sub=document.getElementById('run-stage-sub');
+  if(title)title.textContent=st.title;
+  if(sub)sub.textContent=st.sub;
+  renderRunBg(idx);
+}
+function renderRunBg(idx){
+  var bg=document.getElementById('run-bg');
+  if(!bg)return;
+  var html='';
+  if(idx<2){
+    html+='<div class="bg-house" style="left:8%;top:48px;background:#FFE7EF"></div>';
+    html+='<div class="bg-house" style="right:10%;top:70px;background:#E4F3FF"></div>';
+    html+='<div class="bg-house" style="left:18%;top:150px;background:#FFF0BE"></div>';
+    html+='<div class="bg-house" style="right:18%;top:175px;background:#DFF7E8"></div>';
+  }else{
+    html+='<div class="bg-tent" style="left:5%;top:54px;background:#FFB8CF"></div>';
+    html+='<div class="bg-tent" style="right:6%;top:82px;background:#BFB6FF"></div>';
+    html+='<div class="bg-tent" style="left:10%;top:168px;background:#FFD278"></div>';
+    html+='<div class="bg-tent" style="right:12%;top:210px;background:#9EE6D4"></div>';
+  }
+  bg.innerHTML=html;
+}
+function startMarketRun(){
+  clearRunObjects();
+  runGame.lane=1; runGame.score=0; runGame.stars=0; runGame.fruits=0; runGame.stamps=0; runGame.time=45;
+  runGame.lastTick=0; runGame.lastSpawn=0; runGame.stageIndex=-1; runGame.running=true;
+  moveRun(0); setRunStage(0); updateRunUI();
+  var popup=document.getElementById('run-popup');
+  var result=document.getElementById('run-result');
+  if(popup)popup.classList.add('hide');
+  if(result)result.classList.add('hide');
+  if(runGame.raf)cancelAnimationFrame(runGame.raf);
+  runGame.raf=requestAnimationFrame(runLoop);
+}
+function clearRunObjects(){
+  for(var i=0;i<runGame.objects.length;i++){
+    if(runGame.objects[i].el&&runGame.objects[i].el.parentNode)runGame.objects[i].el.parentNode.removeChild(runGame.objects[i].el);
+  }
+  runGame.objects=[];
+}
+function spawnRunObject(){
+  var world=document.getElementById('run-world');
+  if(!world)return;
+  var lane=Math.floor(Math.random()*3);
+  var isObstacle=Math.random()<.34;
+  var itemSet=[
+    {kind:'star',text:'⭐',cls:'item'},
+    {kind:'fruit',text:['🍎','🍓','🍊'][Math.floor(Math.random()*3)],cls:'item'},
+    {kind:'stamp',text:'🏅',cls:'item'}
+  ];
+  var obstacleSet=[
+    {kind:'box',text:'📦',cls:'obstacle'},
+    {kind:'candy',text:'🍬',cls:'obstacle'},
+    {kind:'danger',text:'⚠️',cls:'obstacle'}
+  ];
+  var data=isObstacle?obstacleSet[Math.floor(Math.random()*obstacleSet.length)]:itemSet[Math.floor(Math.random()*itemSet.length)];
+  var el=document.createElement('div');
+  el.className='run-object '+data.cls;
+  el.textContent=data.text;
+  el.style.left=laneLeft(lane)+'%';
+  el.style.top='-42px';
+  world.appendChild(el);
+  runGame.objects.push({el:el,lane:lane,top:-42,kind:data.kind,hit:false});
+}
+function runLoop(ts){
+  if(!runGame.running)return;
+  if(!runGame.lastTick)runGame.lastTick=ts;
+  var delta=ts-runGame.lastTick;
+  runGame.lastTick=ts;
+  runGame.time=Math.max(0,runGame.time-delta/1000);
+  var elapsed=45-runGame.time;
+  setRunStage(Math.min(3,Math.floor(elapsed/11.25)));
+  if(ts-runGame.lastSpawn>930){
+    spawnRunObject();
+    runGame.lastSpawn=ts;
+  }
+  for(var i=runGame.objects.length-1;i>=0;i--){
+    var obj=runGame.objects[i];
+    obj.top+=delta*.115;
+    obj.el.style.top=obj.top+'px';
+    if(!obj.hit&&obj.top>350&&obj.top<430&&obj.lane===runGame.lane){
+      obj.hit=true;
+      handleRunHit(obj);
+    }
+    if(obj.top>520){
+      if(obj.el.parentNode)obj.el.parentNode.removeChild(obj.el);
+      runGame.objects.splice(i,1);
+    }
+  }
+  updateRunUI();
+  if(runGame.time<=0){endMarketRun();return;}
+  runGame.raf=requestAnimationFrame(runLoop);
+}
+function handleRunHit(obj){
+  obj.el.style.transform='translateX(-50%) scale(1.25)';
+  obj.el.style.opacity='0';
+  if(obj.kind==='star'){runGame.stars++;runGame.score+=12;}
+  else if(obj.kind==='fruit'){runGame.fruits++;runGame.score+=18;}
+  else if(obj.kind==='stamp'){runGame.stamps++;runGame.score+=25;}
+  else{runGame.score=Math.max(0,runGame.score-15);}
+}
+function updateRunUI(){
+  var stars=document.getElementById('run-stars');
+  var fruits=document.getElementById('run-fruits');
+  var stamps=document.getElementById('run-stamps');
+  var time=document.getElementById('run-time');
+  if(stars)stars.textContent=runGame.stars;
+  if(fruits)fruits.textContent=runGame.fruits;
+  if(stamps)stamps.textContent=runGame.stamps;
+  if(time)time.textContent=Math.ceil(runGame.time);
+}
+function endMarketRun(){
+  runGame.running=false;
+  if(runGame.raf)cancelAnimationFrame(runGame.raf);
+  var result=document.getElementById('run-result');
+  var score=document.getElementById('result-score');
+  var fruits=document.getElementById('result-fruits');
+  var stamps=document.getElementById('result-stamps');
+  var rank=document.getElementById('result-rank');
+  if(score)score.textContent=runGame.score;
+  if(fruits)fruits.textContent=runGame.fruits;
+  if(stamps)stamps.textContent=runGame.stamps;
+  if(rank)rank.textContent=runGame.score>=230?'1등':runGame.score>=170?'2등':runGame.score>=110?'3등':'4등';
+  if(result)result.classList.remove('hide');
+}
+initMarketRun();
 
 
 /* ════ ONBOARDING ════ */
