@@ -259,6 +259,7 @@ body::before{
 .game-picker-title{font-size:18px;font-weight:950;color:#3F3565;letter-spacing:-.5px;margin:4px 2px 12px;}
 .game-card{border:none;width:100%;border-radius:22px;padding:18px 16px;margin-bottom:12px;text-align:left;font-family:inherit;background:rgba(255,255,255,.92);box-shadow:0 10px 28px rgba(78,62,130,.12);display:flex;gap:14px;align-items:center;color:#3F3565;}
 .game-card.locked{opacity:.72;}
+.game-card.playable{opacity:1;}
 .game-card-icon{width:54px;height:54px;border-radius:18px;background:linear-gradient(135deg,#D9F3FF,#C8C0FF);display:flex;align-items:center;justify-content:center;font-size:27px;flex-shrink:0;}
 .game-card-title{font-size:15px;font-weight:950;letter-spacing:-.25px;}
 .game-card-sub{font-size:12px;font-weight:700;color:#7A719C;line-height:1.5;margin-top:4px;}
@@ -308,6 +309,67 @@ body::before{
 .ranking-list{display:grid;gap:8px;margin:12px 0 16px;}
 .rank-card{background:#F8F5FF;border-radius:16px;padding:10px 12px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:900;color:#51427E;}
 .run-message{font-size:13px;font-weight:900;color:#7C6BE8;margin:10px 0 12px;}
+.puzzle-shell{height:642px;border-radius:24px;background:linear-gradient(180deg,#F7F1FF 0%,#EEF5FF 54%,#FFF8FC 100%);box-shadow:var(--shm);position:relative;overflow:hidden;border:1px solid rgba(108,92,231,.12);padding:14px;color:#40365F;}
+.puzzle-shell.hide{display:none;}
+.p-stage-select{height:100%;display:flex;flex-direction:column;}
+.p-title{font-size:22px;font-weight:950;color:#44366F;letter-spacing:-.65px;margin-top:4px;}
+.p-sub{font-size:12px;font-weight:750;color:#7E719F;line-height:1.55;margin:6px 0 14px;}
+.p-stage-list{display:grid;gap:10px;}
+.p-stage-card{border:none;width:100%;border-radius:22px;background:rgba(255,255,255,.92);box-shadow:0 9px 24px rgba(80,60,130,.1);padding:15px;display:flex;align-items:center;gap:12px;font-family:inherit;color:#40365F;text-align:left;}
+.p-stage-icon{width:52px;height:52px;border-radius:18px;background:linear-gradient(135deg,#FFFFFF,#ECE7FF);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 -5px 10px rgba(124,107,232,.08);}
+.p-stage-main{flex:1;}
+.p-stage-name{font-size:15px;font-weight:950;letter-spacing:-.25px;}
+.p-stage-ing{display:flex;gap:5px;margin-top:8px;flex-wrap:wrap;}
+.p-ing-mini{font-size:10px;font-weight:900;color:#675894;background:#F2EEFF;border-radius:999px;padding:5px 7px;}
+.p-helper{margin-top:auto;border-radius:18px;background:rgba(255,255,255,.72);padding:12px;text-align:center;font-size:11px;font-weight:850;color:#7A6C9E;line-height:1.5;}
+.p-play{height:100%;display:flex;flex-direction:column;}
+.p-play.hide,.p-stage-select.hide{display:none;}
+.p-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px;}
+.p-stage-title{font-size:17px;font-weight:950;color:#44366F;letter-spacing:-.4px;}
+.p-select-btn{border:none;border-radius:999px;background:#7C6BE8;color:#fff;font-size:12px;font-weight:900;padding:9px 12px;font-family:inherit;box-shadow:0 7px 16px rgba(124,107,232,.24);}
+.p-ingredients{display:flex;gap:7px;overflow:hidden;margin:5px 0 10px;}
+.p-ingredient-pill{display:flex;align-items:center;gap:5px;border-radius:999px;background:rgba(255,255,255,.86);padding:6px 8px;font-size:11px;font-weight:900;color:#675894;box-shadow:0 4px 12px rgba(80,60,130,.08);}
+.p-stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:10px;}
+.p-stat{background:rgba(255,255,255,.9);border-radius:18px;padding:10px;text-align:center;box-shadow:0 7px 18px rgba(80,60,130,.08);}
+.p-stat-label{font-size:10px;font-weight:850;color:#8B80A8;margin-bottom:3px;}
+.p-stat-val{font-size:20px;font-weight:950;color:#5B4AB3;}
+.p-mission{border-radius:16px;background:#EFEAFF;color:#6A5AA8;font-size:12px;font-weight:900;text-align:center;padding:10px;margin-bottom:10px;}
+.p-board{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;background:rgba(255,255,255,.48);border-radius:24px;padding:10px;box-shadow:inset 0 0 0 1px rgba(124,107,232,.08),0 12px 28px rgba(80,60,130,.1);}
+.p-tile{aspect-ratio:1;border:none;border-radius:18px;background:linear-gradient(180deg,#FFFFFF,#F3F0FF);box-shadow:0 5px 12px rgba(86,68,140,.12);display:flex;align-items:center;justify-content:center;transition:transform .12s ease,box-shadow .12s ease,opacity .16s ease;font-family:inherit;}
+.p-tile.selected{transform:scale(.94);box-shadow:0 0 0 3px rgba(124,107,232,.28),0 5px 12px rgba(86,68,140,.12);}
+.p-tile.pop{transform:scale(.65);opacity:.2;}
+.p-tile.empty{opacity:.18;transform:scale(.7);}
+.p-combo{height:22px;text-align:center;font-size:12px;font-weight:950;color:#7C6BE8;margin-top:8px;}
+.p-bottom-help{margin-top:auto;text-align:center;font-size:11px;font-weight:850;color:#8A7BA8;padding-top:8px;}
+.p-result{position:absolute;inset:0;z-index:30;background:rgba(241,235,255,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:20px;}
+.p-result.hide{display:none;}
+.p-modal{width:100%;background:rgba(255,255,255,.95);border-radius:24px;padding:22px 18px;text-align:center;box-shadow:0 18px 46px rgba(80,60,140,.2);}
+.p-modal h2{font-size:24px;font-weight:950;color:#44366F;letter-spacing:-.7px;margin-bottom:6px;}
+.p-modal-sub{font-size:13px;font-weight:750;color:#7E719F;margin-bottom:12px;}
+.p-result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:12px;}
+.p-result-box{background:#F4F0FF;border-radius:16px;padding:10px 6px;font-size:10px;font-weight:900;color:#75679E;}
+.p-result-box strong{display:block;font-size:16px;color:#5B4AB3;margin-top:3px;}
+.p-rank-list{display:grid;gap:7px;margin:10px 0 14px;text-align:left;}
+.p-rank-card{background:#F8F6FF;border-radius:15px;padding:9px 11px;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:900;color:#4E4272;}
+.p-rank-card.me{background:#EDE8FF;color:#5B4AB3;box-shadow:inset 0 0 0 2px rgba(124,107,232,.16);}
+.p-main-btn,.p-sub-btn{border:none;border-radius:17px;font-family:inherit;font-weight:950;}
+.p-main-btn{width:100%;background:#7C6BE8;color:#fff;font-size:15px;padding:13px;box-shadow:0 9px 20px rgba(124,107,232,.28);}
+.p-sub-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;}
+.p-sub-btn{background:#F1EDFF;color:#6A5AA8;font-size:13px;padding:11px;}
+.ing-icon{position:relative;width:34px;height:34px;display:block;}
+.ing-small{width:18px;height:18px;transform:scale(.82);}
+.ing-rice::before{content:'';position:absolute;left:8px;top:6px;width:18px;height:22px;background:#F8FBFF;border:2px solid #D8E3F8;border-radius:11px;box-shadow:5px 3px 0 -1px #F8FBFF,-5px 4px 0 -1px #F8FBFF;}
+.ing-gochujang::before{content:'';position:absolute;left:7px;top:7px;width:20px;height:22px;background:#F26E7F;border-radius:8px 8px 12px 12px;box-shadow:inset 0 -5px 0 rgba(194,45,70,.18);}
+.ing-gochujang::after{content:'';position:absolute;left:11px;top:3px;width:12px;height:7px;background:#FFD2A1;border-radius:5px;}
+.ing-greenonion::before{content:'';position:absolute;left:15px;top:3px;width:7px;height:28px;background:#75D89D;border-radius:7px;transform:rotate(34deg);box-shadow:8px 1px 0 #B8F0C8;}
+.ing-fishcake::before{content:'';position:absolute;left:7px;top:9px;width:21px;height:17px;background:#F7C878;border-radius:10px 10px 9px 9px;transform:rotate(-16deg);box-shadow:inset 0 -4px 0 rgba(198,128,45,.16);}
+.ing-chicken::before{content:'';position:absolute;left:8px;top:9px;width:20px;height:18px;background:#FFD0A0;border-radius:48% 52% 45% 55%;box-shadow:inset -3px -4px 0 rgba(228,138,85,.2);}
+.ing-sauce::before{content:'';position:absolute;left:9px;top:6px;width:16px;height:24px;background:#FF9A82;border-radius:7px 7px 10px 10px;box-shadow:inset 0 -5px 0 rgba(210,69,78,.18);}
+.ing-sauce::after{content:'';position:absolute;left:12px;top:2px;width:10px;height:7px;background:#B49CFF;border-radius:4px;}
+.ing-flour::before{content:'';position:absolute;left:8px;top:7px;width:20px;height:22px;background:#FFF8E7;border:2px solid #EADCBF;border-radius:7px 7px 12px 12px;}
+.ing-flour::after{content:'';position:absolute;left:13px;top:12px;width:9px;height:3px;background:#EADCBF;border-radius:3px;box-shadow:0 5px 0 #EADCBF;}
+.ing-redbean::before{content:'';position:absolute;left:8px;top:8px;width:18px;height:20px;background:#B66A8D;border-radius:50% 45% 50% 44%;transform:rotate(-18deg);box-shadow:inset -4px -3px 0 rgba(91,45,72,.18);}
+.ing-batter::before{content:'';position:absolute;left:5px;top:10px;width:25px;height:17px;background:#FFE1A8;border-radius:50%;box-shadow:inset 0 -4px 0 rgba(218,152,65,.15);}
 /* ── MY INFO ── */
 .myinfo-hero{background:linear-gradient(150deg,#C2E1F5 0%,#B8D8EE 40%,#C6C0EF 100%);padding:24px 20px 20px;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;}
 .myinfo-hero::before{content:'';position:absolute;right:-20px;top:-20px;width:100px;height:100px;background:rgba(255,255,255,.18);border-radius:50%;}
@@ -925,13 +987,13 @@ body::before{
           </div>
           <div class="game-card-state">플레이</div>
         </button>
-        <button class="game-card locked" onclick="openGame('puzzle')">
-          <div class="game-card-icon">🍬</div>
+        <button class="game-card playable" onclick="openGame('puzzle')">
+          <div class="game-card-icon"><span class="ing-icon ing-small ing-rice"></span></div>
           <div>
-            <div class="game-card-title">냠구름 SWEET PUZZLE</div>
-            <div class="game-card-sub">같은 재료를 맞추는 퍼즐 게임 자리입니다.</div>
+            <div class="game-card-title">제일 바이츠 - 음식 재료 연결하기</div>
+            <div class="game-card-sub">재료 3개를 맞춰 시장 음식을 완성해요.</div>
           </div>
-          <div class="game-card-state">준비중</div>
+          <div class="game-card-state">플레이</div>
         </button>
       </div>
       <div class="run-shell hide" id="market-run">
@@ -995,6 +1057,49 @@ body::before{
               <div class="rank-card">🥉 3등 보라</div>
             </div>
             <button class="run-again" id="run-again">다시 달리기</button>
+          </div>
+        </div>
+      </div>
+      <div class="puzzle-shell hide" id="ingredient-puzzle">
+        <div class="p-stage-select" id="p-stage-select">
+          <button class="run-back" onclick="showGamePicker()">‹ 게임 선택</button>
+          <div class="p-title">가게를 골라요</div>
+          <div class="p-sub">같은 재료 3개 이상을 이어서 20번 안에 최고 점수에 도전하세요.</div>
+          <div class="p-stage-list" id="p-stage-list"></div>
+          <div class="p-helper">서로 붙은 재료를 터치해 바꾸기 · 단계별 재료만 등장</div>
+        </div>
+        <div class="p-play hide" id="p-play">
+          <div class="p-head">
+            <div>
+              <div class="p-stage-title" id="p-stage-title">1단계 떡볶이</div>
+              <div class="p-ingredients" id="p-ingredients"></div>
+            </div>
+            <button class="p-select-btn" onclick="showPuzzleStageSelect()">가게 선택</button>
+          </div>
+          <div class="p-stats">
+            <div class="p-stat"><div class="p-stat-label">점수</div><div class="p-stat-val" id="p-score">0</div></div>
+            <div class="p-stat"><div class="p-stat-label">남은 이동</div><div class="p-stat-val" id="p-moves">20</div></div>
+          </div>
+          <div class="p-mission">시장 손님들이 기다려요! 재료 3개를 맞춰요.</div>
+          <div class="p-board" id="p-board"></div>
+          <div class="p-combo" id="p-combo"></div>
+          <div class="p-bottom-help">서로 붙은 재료를 터치해 바꾸기 · 단계별 재료만 등장</div>
+        </div>
+        <div class="p-result hide" id="p-result">
+          <div class="p-modal">
+            <h2>게임 오버!</h2>
+            <div class="p-modal-sub">이동 20회를 모두 사용했어요.</div>
+            <div class="p-result-grid">
+              <div class="p-result-box">최종 점수<strong id="p-final-score">0</strong></div>
+              <div class="p-result-box">랭킹 스코어<strong id="p-rank-score">0</strong></div>
+              <div class="p-result-box">최고 기록<strong id="p-best-label">-</strong></div>
+            </div>
+            <div class="p-rank-list" id="p-rank-list"></div>
+            <button class="p-main-btn" onclick="nextPuzzleStage()">다음 가게로</button>
+            <div class="p-sub-actions">
+              <button class="p-sub-btn" onclick="restartPuzzle()">다시 도전</button>
+              <button class="p-sub-btn" onclick="showPuzzleStageSelect()">가게 선택</button>
+            </div>
           </div>
         </div>
       </div>
@@ -1234,12 +1339,19 @@ var runStages=[
 ];
 var runGame={lane:1,objects:[],running:false,score:0,stars:0,fruits:0,stamps:0,time:45,lastTick:0,lastSpawn:0,stageIndex:-1,raf:null,bound:false};
 function openGame(kind){
-  if(kind!=='run'){alert('두 번째 게임은 다음 버전에서 연결할 예정입니다.');return;}
   var picker=document.getElementById('game-picker');
   var run=document.getElementById('market-run');
+  var puzzle=document.getElementById('ingredient-puzzle');
+  if(picker)picker.classList.add('hide');
+  if(run)run.classList.add('hide');
+  if(puzzle)puzzle.classList.add('hide');
+  if(kind==='puzzle'){
+    if(puzzle)puzzle.classList.remove('hide');
+    showPuzzleStageSelect();
+    return;
+  }
   var popup=document.getElementById('run-popup');
   var result=document.getElementById('run-result');
-  if(picker)picker.classList.add('hide');
   if(run)run.classList.remove('hide');
   if(popup)popup.classList.remove('hide');
   if(result)result.classList.add('hide');
@@ -1253,8 +1365,10 @@ function showGamePicker(){
   clearRunObjects();
   var picker=document.getElementById('game-picker');
   var run=document.getElementById('market-run');
+  var puzzle=document.getElementById('ingredient-puzzle');
   if(picker)picker.classList.remove('hide');
   if(run)run.classList.add('hide');
+  if(puzzle)puzzle.classList.add('hide');
 }
 function initMarketRun(){
   if(runGame.bound)return;
@@ -1431,6 +1545,258 @@ function endMarketRun(){
   if(result)result.classList.remove('hide');
 }
 initMarketRun();
+
+var puzzleStages=[
+  {title:'1단계 떡볶이',food:'떡볶이',ingredients:[
+    {id:'rice',name:'떡',cls:'ing-rice'},
+    {id:'gochujang',name:'고추장',cls:'ing-gochujang'},
+    {id:'greenonion',name:'파',cls:'ing-greenonion'},
+    {id:'fishcake',name:'어묵',cls:'ing-fishcake'}
+  ]},
+  {title:'2단계 닭꼬치',food:'닭꼬치',ingredients:[
+    {id:'chicken',name:'닭고기',cls:'ing-chicken'},
+    {id:'greenonion',name:'파',cls:'ing-greenonion'},
+    {id:'sauce',name:'소스',cls:'ing-sauce'}
+  ]},
+  {title:'3단계 붕어빵',food:'붕어빵',ingredients:[
+    {id:'flour',name:'밀가루',cls:'ing-flour'},
+    {id:'redbean',name:'팥',cls:'ing-redbean'},
+    {id:'batter',name:'반죽',cls:'ing-batter'}
+  ]}
+];
+var puzzleGame={stage:0,size:6,board:[],selected:null,score:0,moves:20,busy:false,best:0};
+function initIngredientPuzzle(){
+  renderPuzzleStages();
+}
+function ingredientIcon(item,small){
+  return '<span class="ing-icon '+(small?'ing-small ':'')+item.cls+'"></span>';
+}
+function renderPuzzleStages(){
+  var list=document.getElementById('p-stage-list');
+  if(!list)return;
+  var html='';
+  for(var i=0;i<puzzleStages.length;i++){
+    var st=puzzleStages[i];
+    var chips='';
+    for(var j=0;j<st.ingredients.length;j++)chips+='<span class="p-ing-mini">'+st.ingredients[j].name+'</span>';
+    html+='<button class="p-stage-card" onclick="startPuzzleStage('+i+')"><div class="p-stage-icon">'+ingredientIcon(st.ingredients[0],false)+'</div><div class="p-stage-main"><div class="p-stage-name">'+st.title+'</div><div class="p-stage-ing">'+chips+'</div></div><div class="game-card-state">선택</div></button>';
+  }
+  list.innerHTML=html;
+}
+function showPuzzleStageSelect(){
+  var picker=document.getElementById('game-picker');
+  var run=document.getElementById('market-run');
+  var puzzle=document.getElementById('ingredient-puzzle');
+  var select=document.getElementById('p-stage-select');
+  var play=document.getElementById('p-play');
+  var result=document.getElementById('p-result');
+  if(picker)picker.classList.add('hide');
+  if(run)run.classList.add('hide');
+  if(puzzle)puzzle.classList.remove('hide');
+  if(select)select.classList.remove('hide');
+  if(play)play.classList.add('hide');
+  if(result)result.classList.add('hide');
+  renderPuzzleStages();
+}
+function startPuzzleStage(idx){
+  puzzleGame.stage=idx;
+  puzzleGame.score=0;
+  puzzleGame.moves=20;
+  puzzleGame.selected=null;
+  puzzleGame.busy=false;
+  puzzleGame.best=Number((lsLoad().puzzleBest||{})[puzzleStages[idx].food]||0);
+  var select=document.getElementById('p-stage-select');
+  var play=document.getElementById('p-play');
+  var result=document.getElementById('p-result');
+  if(select)select.classList.add('hide');
+  if(play)play.classList.remove('hide');
+  if(result)result.classList.add('hide');
+  buildPuzzleBoard();
+  updatePuzzleHeader();
+  renderPuzzleBoard();
+}
+function updatePuzzleHeader(){
+  var st=puzzleStages[puzzleGame.stage];
+  var title=document.getElementById('p-stage-title');
+  var ing=document.getElementById('p-ingredients');
+  var combo=document.getElementById('p-combo');
+  if(title)title.textContent=st.title;
+  if(ing){
+    var html='';
+    for(var i=0;i<st.ingredients.length;i++)html+='<div class="p-ingredient-pill">'+ingredientIcon(st.ingredients[i],true)+st.ingredients[i].name+'</div>';
+    ing.innerHTML=html;
+  }
+  if(combo)combo.textContent='';
+  updatePuzzleStats();
+}
+function updatePuzzleStats(){
+  var score=document.getElementById('p-score');
+  var moves=document.getElementById('p-moves');
+  if(score)score.textContent=puzzleGame.score;
+  if(moves)moves.textContent=puzzleGame.moves;
+}
+function randomPuzzleItem(){
+  var items=puzzleStages[puzzleGame.stage].ingredients;
+  return items[Math.floor(Math.random()*items.length)].id;
+}
+function getPuzzleItem(id){
+  var items=puzzleStages[puzzleGame.stage].ingredients;
+  for(var i=0;i<items.length;i++)if(items[i].id===id)return items[i];
+  return items[0];
+}
+function buildPuzzleBoard(){
+  puzzleGame.board=[];
+  for(var r=0;r<puzzleGame.size;r++){
+    var row=[];
+    for(var c=0;c<puzzleGame.size;c++){
+      var v=randomPuzzleItem();
+      var guard=0;
+      while(guard<20&&((c>=2&&row[c-1]===v&&row[c-2]===v)||(r>=2&&puzzleGame.board[r-1][c]===v&&puzzleGame.board[r-2][c]===v))){
+        v=randomPuzzleItem(); guard++;
+      }
+      row.push(v);
+    }
+    puzzleGame.board.push(row);
+  }
+}
+function renderPuzzleBoard(){
+  var board=document.getElementById('p-board');
+  if(!board)return;
+  var html='';
+  for(var r=0;r<puzzleGame.size;r++){
+    for(var c=0;c<puzzleGame.size;c++){
+      if(!puzzleGame.board[r][c]){
+        html+='<button class="p-tile empty" data-r="'+r+'" data-c="'+c+'"></button>';
+        continue;
+      }
+      var item=getPuzzleItem(puzzleGame.board[r][c]);
+      var selected=puzzleGame.selected&&puzzleGame.selected.r===r&&puzzleGame.selected.c===c?' selected':'';
+      html+='<button class="p-tile'+selected+'" data-r="'+r+'" data-c="'+c+'" onclick="tapPuzzleTile('+r+','+c+')">'+ingredientIcon(item,false)+'</button>';
+    }
+  }
+  board.innerHTML=html;
+  updatePuzzleStats();
+}
+function tapPuzzleTile(r,c){
+  if(puzzleGame.busy||puzzleGame.moves<=0)return;
+  if(!puzzleGame.selected){
+    puzzleGame.selected={r:r,c:c};
+    renderPuzzleBoard();
+    return;
+  }
+  var prev=puzzleGame.selected;
+  if(prev.r===r&&prev.c===c){puzzleGame.selected=null;renderPuzzleBoard();return;}
+  if(Math.abs(prev.r-r)+Math.abs(prev.c-c)!==1){
+    puzzleGame.selected={r:r,c:c};
+    renderPuzzleBoard();
+    return;
+  }
+  swapPuzzle(prev,{r:r,c:c});
+}
+function swapPuzzle(a,b){
+  puzzleGame.busy=true;
+  var tmp=puzzleGame.board[a.r][a.c];
+  puzzleGame.board[a.r][a.c]=puzzleGame.board[b.r][b.c];
+  puzzleGame.board[b.r][b.c]=tmp;
+  puzzleGame.selected=null;
+  var matches=findPuzzleMatches();
+  if(matches.length===0){
+    tmp=puzzleGame.board[a.r][a.c];
+    puzzleGame.board[a.r][a.c]=puzzleGame.board[b.r][b.c];
+    puzzleGame.board[b.r][b.c]=tmp;
+    puzzleGame.busy=false;
+    renderPuzzleBoard();
+    return;
+  }
+  puzzleGame.moves--;
+  resolvePuzzleMatches(1);
+}
+function findPuzzleMatches(){
+  var found={};
+  for(var r=0;r<puzzleGame.size;r++){
+    var count=1;
+    for(var c=1;c<=puzzleGame.size;c++){
+      if(c<puzzleGame.size&&puzzleGame.board[r][c]===puzzleGame.board[r][c-1])count++;
+      else{
+        if(count>=3)for(var k=0;k<count;k++)found[r+','+(c-1-k)]=true;
+        count=1;
+      }
+    }
+  }
+  for(var c2=0;c2<puzzleGame.size;c2++){
+    var count2=1;
+    for(var r2=1;r2<=puzzleGame.size;r2++){
+      if(r2<puzzleGame.size&&puzzleGame.board[r2][c2]===puzzleGame.board[r2-1][c2])count2++;
+      else{
+        if(count2>=3)for(var k2=0;k2<count2;k2++)found[(r2-1-k2)+','+c2]=true;
+        count2=1;
+      }
+    }
+  }
+  var arr=[];
+  for(var key in found){var p=key.split(',');arr.push({r:Number(p[0]),c:Number(p[1])});}
+  return arr;
+}
+function resolvePuzzleMatches(combo){
+  var matches=findPuzzleMatches();
+  if(matches.length===0){
+    puzzleGame.busy=false;
+    renderPuzzleBoard();
+    if(puzzleGame.moves<=0)showPuzzleResult();
+    return;
+  }
+  puzzleGame.score+=matches.length*35*combo;
+  var comboEl=document.getElementById('p-combo');
+  if(comboEl)comboEl.textContent=combo>1?'COMBO x'+combo:'';
+  for(var i=0;i<matches.length;i++)puzzleGame.board[matches[i].r][matches[i].c]=null;
+  renderPuzzleBoard();
+  setTimeout(function(){
+    dropPuzzleTiles();
+    renderPuzzleBoard();
+    setTimeout(function(){resolvePuzzleMatches(combo+1);},180);
+  },180);
+}
+function dropPuzzleTiles(){
+  var n=puzzleGame.size;
+  for(var c=0;c<n;c++){
+    var stack=[];
+    for(var r=n-1;r>=0;r--)if(puzzleGame.board[r][c])stack.push(puzzleGame.board[r][c]);
+    for(var r2=n-1;r2>=0;r2--)puzzleGame.board[r2][c]=stack[n-1-r2]||randomPuzzleItem();
+  }
+}
+function showPuzzleResult(){
+  var st=puzzleStages[puzzleGame.stage];
+  var bests=lsLoad().puzzleBest||{};
+  var oldBest=Number(bests[st.food]||0);
+  var isBest=puzzleGame.score>oldBest;
+  if(isBest){bests[st.food]=puzzleGame.score;lsSave({puzzleBest:bests});}
+  var final=document.getElementById('p-final-score');
+  var rankScore=document.getElementById('p-rank-score');
+  var bestLabel=document.getElementById('p-best-label');
+  if(final)final.textContent=puzzleGame.score;
+  if(rankScore)rankScore.textContent=Math.max(puzzleGame.score,oldBest);
+  if(bestLabel)bestLabel.textContent=isBest?'신기록':'유지';
+  renderPuzzleRanking(isBest);
+  var result=document.getElementById('p-result');
+  if(result)result.classList.remove('hide');
+}
+function renderPuzzleRanking(isBest){
+  var base=[
+    {name:'민지',score:820},{name:'준호',score:690},{name:'서연',score:560},{name:'도윤',score:430},{name:'하린',score:310}
+  ];
+  base.push({name:isBest?'나 · 최고 기록':'나',score:puzzleGame.score,me:true});
+  base.sort(function(a,b){return b.score-a.score;});
+  var list=document.getElementById('p-rank-list');
+  if(!list)return;
+  var html='';
+  for(var i=0;i<Math.min(5,base.length);i++){
+    html+='<div class="p-rank-card '+(base[i].me?'me':'')+'"><span>'+(i+1)+'등 '+base[i].name+'</span><span>'+base[i].score+'</span></div>';
+  }
+  list.innerHTML=html;
+}
+function restartPuzzle(){startPuzzleStage(puzzleGame.stage);}
+function nextPuzzleStage(){startPuzzleStage((puzzleGame.stage+1)%puzzleStages.length);}
+initIngredientPuzzle();
 
 
 /* ════ ONBOARDING ════ */
