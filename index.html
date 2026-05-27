@@ -317,12 +317,12 @@ body::before{
 .run-message{font-size:13px;font-weight:900;color:#7C6BE8;margin:10px 0 12px;}
 .puzzle-shell{height:642px;border-radius:24px;background:linear-gradient(180deg,#F7F1FF 0%,#EEF5FF 54%,#FFF8FC 100%);box-shadow:var(--shm);position:relative;overflow:hidden;border:1px solid rgba(108,92,231,.12);padding:14px;color:#40365F;}
 .puzzle-shell.hide{display:none;}
-.p-stage-select{height:100%;display:flex;flex-direction:column;}
-.p-title{font-size:22px;font-weight:950;color:#44366F;letter-spacing:-.65px;margin-top:4px;}
-.p-sub{font-size:12px;font-weight:750;color:#7E719F;line-height:1.55;margin:6px 0 14px;}
+.p-stage-select{height:100%;display:flex;flex-direction:column;padding-top:92px;}
+.p-title{font-size:22px;font-weight:950;color:#44366F;letter-spacing:-.65px;margin-top:0;text-align:left;}
+.p-sub{font-size:12px;font-weight:750;color:#7E719F;line-height:1.55;margin:8px 0 14px;background:rgba(255,255,255,.72);border-radius:16px;padding:10px 12px;box-shadow:0 5px 14px rgba(80,60,130,.06);}
 .p-stage-list{display:grid;gap:10px;}
-.p-stage-card{border:none;width:100%;border-radius:22px;background:rgba(255,255,255,.92);box-shadow:0 9px 24px rgba(80,60,130,.1);padding:15px;display:flex;align-items:center;gap:12px;font-family:inherit;color:#40365F;text-align:left;}
-.p-stage-icon{width:52px;height:52px;border-radius:18px;background:linear-gradient(135deg,#FFFFFF,#ECE7FF);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 -5px 10px rgba(124,107,232,.08);}
+.p-stage-card{border:none;width:100%;border-radius:22px;background:rgba(255,255,255,.92);box-shadow:0 9px 24px rgba(80,60,130,.1);padding:13px;display:grid;grid-template-columns:58px minmax(0,1fr) auto;align-items:center;gap:12px;font-family:inherit;color:#40365F;text-align:left;}
+.p-stage-icon{width:58px;height:58px;border-radius:18px;background:linear-gradient(135deg,#FFFFFF,#ECE7FF);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 -5px 10px rgba(124,107,232,.08);overflow:hidden;}
 .p-stage-main{flex:1;}
 .p-stage-name{font-size:15px;font-weight:950;letter-spacing:-.25px;}
 .p-stage-ing{display:flex;gap:5px;margin-top:8px;flex-wrap:wrap;}
@@ -330,18 +330,18 @@ body::before{
 .p-helper{margin-top:auto;border-radius:18px;background:rgba(255,255,255,.72);padding:12px;text-align:center;font-size:11px;font-weight:850;color:#7A6C9E;line-height:1.5;}
 .p-play{height:100%;display:flex;flex-direction:column;}
 .p-play.hide,.p-stage-select.hide{display:none;}
-.p-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px;}
+.p-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:10px;margin-bottom:8px;}
 .p-stage-title{font-size:17px;font-weight:950;color:#44366F;letter-spacing:-.4px;}
-.p-select-btn{border:none;border-radius:999px;background:#7C6BE8;color:#fff;font-size:12px;font-weight:900;padding:9px 12px;font-family:inherit;box-shadow:0 7px 16px rgba(124,107,232,.24);}
-.p-ingredients{display:flex;gap:7px;overflow:hidden;margin:5px 0 10px;}
-.p-ingredient-pill{display:flex;align-items:center;gap:5px;border-radius:999px;background:rgba(255,255,255,.86);padding:6px 8px;font-size:11px;font-weight:900;color:#675894;box-shadow:0 4px 12px rgba(80,60,130,.08);}
+.p-select-btn{border:none;border-radius:999px;background:#7C6BE8;color:#fff;font-size:12px;font-weight:900;padding:9px 12px;font-family:inherit;box-shadow:0 7px 16px rgba(124,107,232,.24);white-space:nowrap;}
+.p-ingredients{display:flex;gap:7px;flex-wrap:wrap;margin:7px 0 10px;}
+.p-ingredient-pill{display:flex;align-items:center;justify-content:center;gap:5px;border-radius:999px;background:rgba(255,255,255,.86);padding:6px 9px;font-size:11px;font-weight:900;color:#675894;box-shadow:0 4px 12px rgba(80,60,130,.08);min-height:32px;}
 .p-stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:10px;}
 .p-stat{background:rgba(255,255,255,.9);border-radius:18px;padding:10px;text-align:center;box-shadow:0 7px 18px rgba(80,60,130,.08);}
 .p-stat-label{font-size:10px;font-weight:850;color:#8B80A8;margin-bottom:3px;}
 .p-stat-val{font-size:20px;font-weight:950;color:#5B4AB3;}
 .p-mission{border-radius:16px;background:#EFEAFF;color:#6A5AA8;font-size:12px;font-weight:900;text-align:center;padding:10px;margin-bottom:10px;}
 .p-board{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;background:rgba(255,255,255,.48);border-radius:24px;padding:10px;box-shadow:inset 0 0 0 1px rgba(124,107,232,.08),0 12px 28px rgba(80,60,130,.1);}
-.p-tile{aspect-ratio:1;border:none;border-radius:18px;background:linear-gradient(180deg,#FFFFFF,#F3F0FF);box-shadow:0 5px 12px rgba(86,68,140,.12);display:flex;align-items:center;justify-content:center;transition:transform .12s ease,box-shadow .12s ease,opacity .16s ease;font-family:inherit;}
+.p-tile{aspect-ratio:1;border:none;border-radius:18px;background:linear-gradient(180deg,#FFFFFF,#F3F0FF);box-shadow:0 5px 12px rgba(86,68,140,.12);display:flex;align-items:center;justify-content:center;transition:transform .12s ease,box-shadow .12s ease,opacity .16s ease;font-family:inherit;padding:0;overflow:hidden;}
 .p-tile.selected{transform:scale(.94);box-shadow:0 0 0 3px rgba(124,107,232,.28),0 5px 12px rgba(86,68,140,.12);}
 .p-tile.pop{transform:scale(.65);opacity:.2;}
 .p-tile.empty{opacity:.18;transform:scale(.7);}
@@ -365,14 +365,14 @@ body::before{
 .ing-icon{position:relative;width:34px;height:34px;display:block;}
 .ing-small{width:18px;height:18px;transform:scale(.82);}
 .ing-img{width:44px;height:44px;object-fit:contain;display:block;filter:drop-shadow(0 6px 6px rgba(65,45,90,.16));}
-.p-tile .ing-img{width:44px;height:44px;}
-.p-stage-icon .ing-img{width:54px;height:54px;}
+.p-tile .ing-img{width:46px;height:46px;margin:auto;}
+.p-stage-icon .ing-img{width:56px;height:56px;margin:auto;}
 .p-ingredient-pill .ing-img{width:20px;height:20px;}
 .game-card-icon .ing-img{width:52px;height:52px;}
 .run-mini-icon{position:relative;width:42px;height:32px;filter:drop-shadow(0 6px 6px rgba(65,45,90,.15));}
 .run-mini-icon::before{content:'';position:absolute;left:3px;bottom:2px;width:36px;height:20px;background:#BFE8FF;border:2px solid #78BDE8;border-radius:20px;}
 .run-mini-icon::after{content:'';position:absolute;left:13px;top:0;width:20px;height:20px;background:#C9EDFF;border:2px solid #78BDE8;border-radius:50%;box-shadow:13px 7px 0 -4px #C9EDFF,13px 7px 0 -2px #78BDE8;}
-.p-stage-card .game-card-state{grid-column:auto;margin-left:auto;justify-self:auto;}
+.p-stage-card .game-card-state{grid-column:3;margin-left:0;justify-self:end;align-self:center;}
 .ing-rice::before{content:'';position:absolute;left:8px;top:6px;width:18px;height:22px;background:#F8FBFF;border:2px solid #D8E3F8;border-radius:11px;box-shadow:5px 3px 0 -1px #F8FBFF,-5px 4px 0 -1px #F8FBFF;}
 .ing-gochujang::before{content:'';position:absolute;left:7px;top:7px;width:20px;height:22px;background:#F26E7F;border-radius:8px 8px 12px 12px;box-shadow:inset 0 -5px 0 rgba(194,45,70,.18);}
 .ing-gochujang::after{content:'';position:absolute;left:11px;top:3px;width:12px;height:7px;background:#FFD2A1;border-radius:5px;}
@@ -1594,14 +1594,14 @@ var puzzleStages=[
     {id:'fishcake',name:'어묵',cls:'ing-fishcake',img:'assets/ingredients/fishcake.png'}
   ]},
   {title:'2단계 닭꼬치',food:'닭꼬치',ingredients:[
-    {id:'chicken',name:'닭고기',cls:'ing-chicken'},
-    {id:'greenonion',name:'파',cls:'ing-greenonion'},
-    {id:'sauce',name:'소스',cls:'ing-sauce'}
+    {id:'chicken',name:'닭고기',cls:'ing-chicken',img:'assets/ingredients/chicken.png'},
+    {id:'greenonion',name:'파',cls:'ing-greenonion',img:'assets/ingredients/greenonion2.png'},
+    {id:'sauce',name:'데리야끼 소스',cls:'ing-sauce',img:'assets/ingredients/sauce.png'}
   ]},
   {title:'3단계 붕어빵',food:'붕어빵',ingredients:[
-    {id:'flour',name:'밀가루',cls:'ing-flour'},
-    {id:'redbean',name:'팥',cls:'ing-redbean'},
-    {id:'batter',name:'반죽',cls:'ing-batter'}
+    {id:'flour',name:'밀가루',cls:'ing-flour',img:'assets/ingredients/flour.png'},
+    {id:'redbean',name:'팥',cls:'ing-redbean',img:'assets/ingredients/redbean.png'},
+    {id:'milk',name:'우유',cls:'ing-batter',img:'assets/ingredients/milk.png'}
   ]}
 ];
 var puzzleGame={stage:0,size:6,board:[],selected:null,score:0,timeLeft:90,timer:null,busy:false,best:0};
