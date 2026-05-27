@@ -149,6 +149,7 @@ body::before{
 .menu-price{font-size:13px;color:var(--pm);font-weight:700;margin-left:auto;}
 .menu-tags{display:flex;gap:5px;flex-wrap:wrap;}
 .menu-tag{font-size:10px;padding:3px 9px;border-radius:20px;font-weight:600;}
+.menu-allergy-note{margin-top:7px;background:#FFF1F1;color:#D93636;border-radius:12px;padding:7px 9px;font-size:11px;font-weight:900;line-height:1.4;}
 .tag-allergy{background:var(--redl);color:var(--red);}
 .tag-origin{background:var(--greenl);color:var(--green);}
 .tag-cal{background:#F3F4F6;color:var(--t2);}
@@ -272,7 +273,7 @@ body::before{
 .run-back{position:absolute;top:58px;left:14px;z-index:12;border:none;background:rgba(255,255,255,.9);color:#6A5AA8;font-size:12px;font-weight:900;border-radius:999px;padding:8px 11px;font-family:inherit;box-shadow:0 5px 14px rgba(80,60,120,.12);}
 .run-shell.hide{display:none;}
 .run-shell{height:642px;border-radius:24px;background:linear-gradient(180deg,#F5EEFF 0%,#EAF2FF 48%,#FFEFF7 100%);box-shadow:var(--shm);position:relative;overflow:hidden;border:1px solid rgba(108,92,231,.12);}
-.run-top{position:absolute;top:12px;left:10px;right:10px;z-index:5;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.run-top{position:absolute;top:12px;left:10px;right:10px;z-index:5;display:grid;grid-template-columns:repeat(5,1fr);gap:5px;}
 .run-stat{background:rgba(255,255,255,.88);border-radius:14px;padding:7px 5px;text-align:center;font-size:11px;font-weight:900;color:#5D4BA8;box-shadow:0 4px 14px rgba(100,80,160,.08);}
 .run-stage{position:absolute;top:64px;left:16px;right:16px;z-index:4;text-align:center;}
 .run-stage-title{font-size:16px;font-weight:950;color:#51427E;letter-spacing:-.4px;}
@@ -295,8 +296,8 @@ body::before{
 .bg-tent::after{content:'';position:absolute;left:12px;bottom:8px;width:13px;height:13px;background:#FF8F8F;border-radius:50%;box-shadow:17px 0 0 #FFD36A,34px 0 0 #8EE4B6;}
 .run-road{position:absolute;left:88px;right:88px;top:128px;bottom:0;background:linear-gradient(180deg,#D6C9FF,#BFB0F3);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);z-index:2;}
 .run-lane{position:absolute;left:50%;top:144px;bottom:8px;width:3px;background:repeating-linear-gradient(180deg,rgba(255,255,255,.7) 0 18px,transparent 18px 34px);transform:translateX(-50%);z-index:3;}
-.runner-cloud{position:absolute;bottom:48px;left:50%;width:72px;height:58px;transform:translateX(-50%);z-index:7;filter:drop-shadow(0 12px 10px rgba(73,56,120,.22));transition:left .18s ease;}
-.runner-cloud svg{width:72px;height:58px;display:block;}
+.runner-cloud{position:absolute;bottom:44px;left:50%;width:86px;height:58px;transform:translateX(-50%);z-index:7;filter:drop-shadow(0 12px 10px rgba(73,56,120,.22));transition:left .18s ease;}
+.runner-cloud img{width:86px;height:58px;object-fit:contain;display:block;}
 .run-shadow{position:absolute;bottom:38px;left:50%;width:54px;height:12px;background:rgba(83,65,120,.18);border-radius:50%;transform:translateX(-50%);z-index:5;transition:left .18s ease;}
 .run-object{position:absolute;z-index:6;width:38px;height:38px;margin-left:-19px;display:flex;align-items:center;justify-content:center;font-size:27px;text-align:center;filter:drop-shadow(0 5px 5px rgba(70,50,100,.18));transition:opacity .12s ease, transform .12s ease;}
 .run-object.obstacle{font-size:31px;}
@@ -417,6 +418,16 @@ body::before{
 .coupon-wallet-sub{font-size:12px;font-weight:700;color:#756A94;margin-top:4px;line-height:1.45;}
 .coupon-wallet-state{font-size:11px;font-weight:900;color:#fff;background:#7C6BE8;border-radius:999px;padding:6px 9px;white-space:nowrap;}
 .coupon-wallet-card.locked .coupon-wallet-state{background:#D1D5DB;color:#6B7280;}
+.coupon-modal{position:fixed;inset:0;z-index:10000;background:rgba(38,30,70,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:24px;}
+.coupon-modal.hide{display:none;}
+.coupon-ticket{width:min(330px,100%);background:#fff;border-radius:24px;padding:22px 18px;box-shadow:0 22px 54px rgba(45,35,85,.24);text-align:center;color:#40365F;}
+.coupon-ticket-title{font-size:20px;font-weight:950;letter-spacing:-.5px;}
+.coupon-ticket-sub{font-size:12px;font-weight:750;color:#7A719C;margin:6px 0 18px;}
+.barcode-box{background:#F8F7FE;border-radius:18px;padding:18px 12px;margin:12px 0;}
+.barcode{height:86px;display:flex;align-items:stretch;justify-content:center;gap:3px;background:#fff;border-radius:12px;padding:12px;}
+.barcode span{display:block;background:#1F2430;border-radius:2px;}
+.barcode-num{font-size:12px;font-weight:900;color:#5D4BA8;letter-spacing:1.8px;margin-top:10px;}
+.coupon-close{border:none;border-radius:16px;background:#7C6BE8;color:#fff;font-size:14px;font-weight:950;padding:12px;width:100%;font-family:inherit;box-shadow:0 9px 20px rgba(124,107,232,.28);}
 
 
 /* ════════ ONBOARDING ════════ */
@@ -1021,6 +1032,7 @@ body::before{
       <div class="run-shell hide" id="market-run">
         <button class="run-back" onclick="showGamePicker()">‹ 게임 선택</button>
         <div class="run-top">
+          <div class="run-stat">점수 <span id="run-score">0</span></div>
           <div class="run-stat">⭐ <span id="run-stars">0</span></div>
           <div class="run-stat">🍎 <span id="run-fruits">0</span></div>
           <div class="run-stat">🏅 <span id="run-stamps">0</span></div>
@@ -1037,17 +1049,7 @@ body::before{
           <div class="run-lane"></div>
           <div class="run-shadow" id="run-shadow"></div>
           <div class="runner-cloud" id="runner-cloud">
-            <svg viewBox="0 0 96 72" aria-label="냠구름 캐릭터">
-              <ellipse cx="48" cy="52" rx="34" ry="15" fill="#A7DFFF" stroke="#61AFDD" stroke-width="3"/>
-              <circle cx="32" cy="39" r="18" fill="#BEEBFF" stroke="#61AFDD" stroke-width="3"/>
-              <circle cx="49" cy="31" r="22" fill="#C8F0FF" stroke="#61AFDD" stroke-width="3"/>
-              <circle cx="66" cy="42" r="17" fill="#B9E7FF" stroke="#61AFDD" stroke-width="3"/>
-              <path d="M34 45 q5 5 10 0" fill="none" stroke="#315C8A" stroke-width="3" stroke-linecap="round"/>
-              <path d="M58 43 q4 -4 8 0" fill="none" stroke="#315C8A" stroke-width="3" stroke-linecap="round"/>
-              <path d="M45 52 q7 6 14 0" fill="none" stroke="#315C8A" stroke-width="3" stroke-linecap="round"/>
-              <ellipse cx="31" cy="53" rx="6" ry="3.5" fill="#FF9FBD" opacity=".9"/>
-              <ellipse cx="68" cy="53" rx="6" ry="3.5" fill="#FF9FBD" opacity=".9"/>
-            </svg>
+            <img src="assets/characters/nyamcloud.png" alt="냠구름">
           </div>
         </div>
         <div class="run-bottom">
@@ -1086,7 +1088,7 @@ body::before{
         <div class="p-stage-select" id="p-stage-select">
           <button class="run-back" onclick="showGamePicker()">‹ 게임 선택</button>
           <div class="p-title">가게를 골라요</div>
-          <div class="p-sub">같은 재료 3개 이상을 이어서 20번 안에 최고 점수에 도전하세요.</div>
+          <div class="p-sub">같은 재료 3개 이상을 이어서 90초 안에 최고 점수에 도전하세요.</div>
           <div class="p-stage-list" id="p-stage-list"></div>
           <div class="p-helper">서로 붙은 재료를 터치해 바꾸기 · 단계별 재료만 등장</div>
         </div>
@@ -1100,7 +1102,7 @@ body::before{
           </div>
           <div class="p-stats">
             <div class="p-stat"><div class="p-stat-label">점수</div><div class="p-stat-val" id="p-score">0</div></div>
-            <div class="p-stat"><div class="p-stat-label">남은 이동</div><div class="p-stat-val" id="p-moves">20</div></div>
+            <div class="p-stat"><div class="p-stat-label">남은 시간</div><div class="p-stat-val" id="p-time">90</div></div>
           </div>
           <div class="p-mission">시장 손님들이 기다려요! 재료 3개를 맞춰요.</div>
           <div class="p-board" id="p-board"></div>
@@ -1110,7 +1112,7 @@ body::before{
         <div class="p-result hide" id="p-result">
           <div class="p-modal">
             <h2>게임 오버!</h2>
-            <div class="p-modal-sub">이동 20회를 모두 사용했어요.</div>
+            <div class="p-modal-sub">제한시간 90초가 끝났어요.</div>
             <div class="p-result-grid">
               <div class="p-result-box">최종 점수<strong id="p-final-score">0</strong></div>
               <div class="p-result-box">랭킹 스코어<strong id="p-rank-score">0</strong></div>
@@ -1162,7 +1164,7 @@ body::before{
     </div>
     <div class="myinfo-section">
       <div class="mis-title">쿠폰 지갑</div>
-      <div class="coupon-wallet-card locked" id="coupon-wallet-card">
+      <div class="coupon-wallet-card locked" id="coupon-wallet-card" onclick="openCouponBarcode()">
         <div class="coupon-wallet-icon">🎫</div>
         <div class="coupon-wallet-main">
           <div class="coupon-wallet-title" id="coupon-wallet-title">보유 쿠폰 없음</div>
@@ -1189,6 +1191,18 @@ body::before{
     </div>
     <div style="height:6px;"></div>
     <div style="text-align:center;padding:0 16px 16px"><button onclick="resetOnboarding()" style="font-size:11px;color:var(--t3);background:none;border:none;cursor:pointer;font-family:inherit;text-decoration:underline">🔄 온보딩 초기화 (다시 시작)</button></div>
+  </div>
+
+  <div class="coupon-modal hide" id="coupon-modal" onclick="closeCouponBarcode(event)">
+    <div class="coupon-ticket">
+      <div class="coupon-ticket-title">1,000원 쿠폰</div>
+      <div class="coupon-ticket-sub">결제 시 화면을 보여주세요.</div>
+      <div class="barcode-box">
+        <div class="barcode" id="coupon-barcode"></div>
+        <div class="barcode-num">JEIL-2025-1000</div>
+      </div>
+      <button class="coupon-close" onclick="closeCouponBarcode(event)">닫기</button>
+    </div>
   </div>
 
   <!-- BOTTOM NAV -->
@@ -1269,14 +1283,16 @@ function showDetail(key){
   for(var mi=0;mi<d.menus.length;mi++){
     var mn=d.menus[mi];
     var tags='';
+    var allergyHits=[];
     for(var ti=0;ti<mn.tags.length;ti++){
       var tg=mn.tags[ti];
       var isA=false;
-      for(var ai=0;ai<al.length;ai++){ if(tg.indexOf(al[ai])>=0){isA=true;break;} }
+      for(var ai=0;ai<al.length;ai++){ if(tg.indexOf(al[ai])>=0){isA=true;if(allergyHits.indexOf(al[ai])<0)allergyHits.push(al[ai]);} }
       var tc=isA?'tag-allergy':tg.indexOf('국내산')>=0?'tag-origin':'tag-cal';
       tags+='<span class="menu-tag '+tc+'">'+tg+'</span>';
     }
-    menus+='<div class="menu-item"><div class="menu-item-top"><span class="menu-emoji">'+mn.emoji+'</span><span class="menu-name">'+mn.name+'</span><span class="menu-price">'+mn.price+'</span></div><div class="menu-tags">'+tags+'</div></div>';
+    var allergyNote=allergyHits.length?'<div class="menu-allergy-note">내 알레르기 주의: '+allergyHits.join(', ')+'</div>':'';
+    menus+='<div class="menu-item"><div class="menu-item-top"><span class="menu-emoji">'+mn.emoji+'</span><span class="menu-name">'+mn.name+'</span><span class="menu-price">'+mn.price+'</span></div><div class="menu-tags">'+tags+'</div>'+allergyNote+'</div>';
   }
   var storeHero='<div class="detail-hero"><div class="detail-icon">'+d.emoji+'</div><div><div class="detail-store-name">'+d.name+'</div><div class="detail-store-sub">'+d.sub+'</div><div class="detail-badges">'+badges+'</div></div></div>';
   var infoSec='<div class="detail-section"><div class="detail-section-title">위생 · 기본 정보</div><div class="detail-card">'+infoRows+'</div></div>';
@@ -1543,10 +1559,12 @@ function handleRunHit(obj){
   else{runGame.score=Math.max(0,runGame.score-15);}
 }
 function updateRunUI(){
+  var score=document.getElementById('run-score');
   var stars=document.getElementById('run-stars');
   var fruits=document.getElementById('run-fruits');
   var stamps=document.getElementById('run-stamps');
   var time=document.getElementById('run-time');
+  if(score)score.textContent=runGame.score;
   if(stars)stars.textContent=runGame.stars;
   if(fruits)fruits.textContent=runGame.fruits;
   if(stamps)stamps.textContent=runGame.stamps;
@@ -1586,7 +1604,7 @@ var puzzleStages=[
     {id:'batter',name:'반죽',cls:'ing-batter'}
   ]}
 ];
-var puzzleGame={stage:0,size:6,board:[],selected:null,score:0,moves:20,busy:false,best:0};
+var puzzleGame={stage:0,size:6,board:[],selected:null,score:0,timeLeft:90,timer:null,busy:false,best:0};
 function initIngredientPuzzle(){
   renderPuzzleStages();
 }
@@ -1619,12 +1637,13 @@ function showPuzzleStageSelect(){
   if(select)select.classList.remove('hide');
   if(play)play.classList.add('hide');
   if(result)result.classList.add('hide');
+  if(puzzleGame.timer){clearInterval(puzzleGame.timer);puzzleGame.timer=null;}
   renderPuzzleStages();
 }
 function startPuzzleStage(idx){
   puzzleGame.stage=idx;
   puzzleGame.score=0;
-  puzzleGame.moves=20;
+  puzzleGame.timeLeft=90;
   puzzleGame.selected=null;
   puzzleGame.busy=false;
   puzzleGame.best=Number((lsLoad().puzzleBest||{})[puzzleStages[idx].food]||0);
@@ -1637,6 +1656,7 @@ function startPuzzleStage(idx){
   buildPuzzleBoard();
   updatePuzzleHeader();
   renderPuzzleBoard();
+  startPuzzleTimer();
 }
 function updatePuzzleHeader(){
   var st=puzzleStages[puzzleGame.stage];
@@ -1654,9 +1674,22 @@ function updatePuzzleHeader(){
 }
 function updatePuzzleStats(){
   var score=document.getElementById('p-score');
-  var moves=document.getElementById('p-moves');
+  var time=document.getElementById('p-time');
   if(score)score.textContent=puzzleGame.score;
-  if(moves)moves.textContent=puzzleGame.moves;
+  if(time)time.textContent=puzzleGame.timeLeft;
+}
+function startPuzzleTimer(){
+  if(puzzleGame.timer)clearInterval(puzzleGame.timer);
+  puzzleGame.timer=setInterval(function(){
+    puzzleGame.timeLeft=Math.max(0,puzzleGame.timeLeft-1);
+    updatePuzzleStats();
+    if(puzzleGame.timeLeft<=0){
+      clearInterval(puzzleGame.timer);
+      puzzleGame.timer=null;
+      puzzleGame.busy=true;
+      showPuzzleResult();
+    }
+  },1000);
 }
 function randomPuzzleItem(){
   var items=puzzleStages[puzzleGame.stage].ingredients;
@@ -1701,7 +1734,7 @@ function renderPuzzleBoard(){
   updatePuzzleStats();
 }
 function tapPuzzleTile(r,c){
-  if(puzzleGame.busy||puzzleGame.moves<=0)return;
+  if(puzzleGame.busy||puzzleGame.timeLeft<=0)return;
   if(!puzzleGame.selected){
     puzzleGame.selected={r:r,c:c};
     renderPuzzleBoard();
@@ -1731,7 +1764,6 @@ function swapPuzzle(a,b){
     renderPuzzleBoard();
     return;
   }
-  puzzleGame.moves--;
   resolvePuzzleMatches(1);
 }
 function findPuzzleMatches(){
@@ -1765,7 +1797,7 @@ function resolvePuzzleMatches(combo){
   if(matches.length===0){
     puzzleGame.busy=false;
     renderPuzzleBoard();
-    if(puzzleGame.moves<=0)showPuzzleResult();
+    if(puzzleGame.timeLeft<=0)showPuzzleResult();
     return;
   }
   puzzleGame.score+=matches.length*35*combo;
@@ -1788,6 +1820,7 @@ function dropPuzzleTiles(){
   }
 }
 function showPuzzleResult(){
+  if(puzzleGame.timer){clearInterval(puzzleGame.timer);puzzleGame.timer=null;}
   var st=puzzleStages[puzzleGame.stage];
   var bests=lsLoad().puzzleBest||{};
   var oldBest=Number(bests[st.food]||0);
@@ -2026,6 +2059,28 @@ function updateCouponWallet() {
     sub.textContent=Math.max(MAX_WATER-waterCount,0)+'번 더 태그하면 1,000원 쿠폰이 지급돼요.';
     state.textContent='잠김';
   }
+}
+
+function renderCouponBarcode(){
+  var box=document.getElementById('coupon-barcode');
+  if(!box)return;
+  var widths=[2,5,2,1,4,3,1,6,2,4,1,3,5,2,2,6,1,4,3,2,5,1,3,4,2,6,1,2,5,3];
+  var html='';
+  for(var i=0;i<widths.length;i++)html+='<span style="width:'+widths[i]+'px"></span>';
+  box.innerHTML=html;
+}
+function openCouponBarcode(){
+  var u=lsLoad();
+  var active=couponIssued||u.couponIssued||waterCount>=MAX_WATER;
+  if(!active)return;
+  renderCouponBarcode();
+  var modal=document.getElementById('coupon-modal');
+  if(modal)modal.classList.remove('hide');
+}
+function closeCouponBarcode(e){
+  if(e)e.stopPropagation();
+  var modal=document.getElementById('coupon-modal');
+  if(modal)modal.classList.add('hide');
 }
 
 function toggleMyAllergy(chip, a) {
