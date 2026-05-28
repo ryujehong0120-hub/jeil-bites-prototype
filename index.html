@@ -228,11 +228,20 @@ body::before{
 .water-note{margin:0 20px 14px;padding:12px 16px;background:var(--surf);border-radius:var(--rs);font-size:12px;color:var(--t2);line-height:1.6;box-shadow:var(--sh);}
 .water-note strong{color:var(--p);}
 .home-grow-card{margin:14px 16px 0;background:var(--surf);border-radius:var(--r);padding:16px;box-shadow:var(--sh);display:flex;align-items:center;gap:15px;}
-.home-grow-visual{width:82px;height:82px;border-radius:22px;background:linear-gradient(180deg,#DDF1FF 0%,#E8F5E9 100%);display:flex;align-items:flex-end;justify-content:center;font-size:38px;line-height:1;padding-bottom:8px;flex-shrink:0;position:relative;overflow:hidden;}
-.home-grow-visual::before{content:'☁️';position:absolute;top:7px;left:16px;font-size:26px;}
-.home-grow-visual::after{content:'💧';position:absolute;top:34px;right:18px;font-size:16px;animation:fall 1.2s linear infinite;}
+.home-grow-visual{width:92px;height:104px;border-radius:24px;background:linear-gradient(180deg,#EAF7FF 0%,#F0F9ED 100%);display:flex;align-items:flex-end;justify-content:center;flex-shrink:0;position:relative;overflow:hidden;box-shadow:inset 0 -8px 18px rgba(87,160,98,.08);}
+.home-grow-cloud{position:absolute;top:8px;left:12px;width:68px;height:42px;object-fit:contain;z-index:4;filter:drop-shadow(0 6px 6px rgba(65,45,90,.12));}
+.home-grow-rain{position:absolute;top:43px;left:0;right:0;height:32px;z-index:3;pointer-events:none;}
+.home-grow-rain span{position:absolute;top:0;width:3px;height:12px;border-radius:999px;background:#6EC6FF;opacity:.78;animation:homeRain 1.15s linear infinite;}
+.home-grow-rain span:nth-child(1){left:25px;animation-delay:.05s;}
+.home-grow-rain span:nth-child(2){left:43px;animation-delay:.32s;}
+.home-grow-rain span:nth-child(3){left:61px;animation-delay:.18s;}
+.home-grow-rain span:nth-child(4){left:35px;animation-delay:.54s;}
+.home-grow-rain span:nth-child(5){left:53px;animation-delay:.72s;}
+.home-grow-plant{position:absolute;left:50%;bottom:7px;transform:translateX(-50%);width:82px;height:60px;z-index:2;display:flex;align-items:flex-end;justify-content:center;}
+@keyframes homeRain{0%{transform:translateY(-8px);opacity:0}20%{opacity:.85}100%{transform:translateY(30px);opacity:0}}
 .home-grow-info{flex:1;}
 .home-grow-title{font-size:15px;font-weight:900;color:var(--t1);letter-spacing:-.3px;margin-bottom:8px;}
+.home-grow-stage{display:inline-flex;align-items:center;margin-bottom:8px;padding:4px 8px;border-radius:999px;background:#EEF8EF;color:#268A50;font-size:11px;font-weight:900;}
 .home-grow-sub{font-size:12px;color:var(--t2);font-weight:700;margin-top:8px;}
 .home-coupon{display:none;margin:12px 16px 0;background:linear-gradient(135deg,#6C5CE7,#9D8CFF);color:#fff;border-radius:var(--r);padding:16px;box-shadow:0 8px 24px rgba(108,92,231,.28);align-items:center;gap:12px;}
 .home-coupon.show{display:flex;animation:popIn .35s cubic-bezier(.34,1.4,.64,1);}
@@ -317,7 +326,8 @@ body::before{
 .run-message{font-size:13px;font-weight:900;color:#7C6BE8;margin:10px 0 12px;}
 .puzzle-shell{height:642px;border-radius:24px;background:linear-gradient(180deg,#F7F1FF 0%,#EEF5FF 54%,#FFF8FC 100%);box-shadow:var(--shm);position:relative;overflow:hidden;border:1px solid rgba(108,92,231,.12);padding:14px;color:#40365F;}
 .puzzle-shell.hide{display:none;}
-.p-stage-select{height:100%;display:flex;flex-direction:column;padding-top:92px;}
+.p-stage-select{height:100%;display:flex;flex-direction:column;padding-top:58px;}
+.p-stage-select .run-back{top:16px;}
 .p-title{font-size:22px;font-weight:950;color:#44366F;letter-spacing:-.65px;margin-top:0;text-align:left;}
 .p-sub{font-size:12px;font-weight:750;color:#7E719F;line-height:1.55;margin:8px 0 14px;background:rgba(255,255,255,.72);border-radius:16px;padding:10px 12px;box-shadow:0 5px 14px rgba(80,60,130,.06);}
 .p-stage-list{display:grid;gap:10px;}
@@ -369,6 +379,9 @@ body::before{
 .p-stage-icon .ing-img{width:56px;height:56px;margin:auto;}
 .p-ingredient-pill .ing-img{width:20px;height:20px;}
 .game-card-icon .ing-img{width:52px;height:52px;}
+.game-card-icon.cloud-logo img{width:58px;height:42px;object-fit:contain;filter:drop-shadow(0 6px 6px rgba(65,45,90,.14));}
+.game-card-preview{width:58px;height:58px;border-radius:18px;background:linear-gradient(180deg,#FFFFFF,#F1EDFF);display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:7px;box-shadow:inset 0 -5px 10px rgba(124,107,232,.08);}
+.game-card-preview img{width:20px;height:20px;object-fit:contain;margin:auto;filter:drop-shadow(0 3px 4px rgba(65,45,90,.14));}
 .run-mini-icon{position:relative;width:42px;height:32px;filter:drop-shadow(0 6px 6px rgba(65,45,90,.15));}
 .run-mini-icon::before{content:'';position:absolute;left:3px;bottom:2px;width:36px;height:20px;background:#BFE8FF;border:2px solid #78BDE8;border-radius:20px;}
 .run-mini-icon::after{content:'';position:absolute;left:13px;top:0;width:20px;height:20px;background:#C9EDFF;border:2px solid #78BDE8;border-radius:50%;box-shadow:13px 7px 0 -4px #C9EDFF,13px 7px 0 -2px #78BDE8;}
@@ -853,9 +866,14 @@ body::before{
       </div>
     </div>
     <div class="home-grow-card">
-      <div class="home-grow-visual">🌳</div>
+      <div class="home-grow-visual">
+        <img class="home-grow-cloud" src="assets/characters/nyamcloud.png" alt="냠구름">
+        <div class="home-grow-rain" id="home-grow-rain"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="home-grow-plant" id="home-grow-plant"></div>
+      </div>
       <div class="home-grow-info">
         <div class="home-grow-title">냠구름 나무 키우기</div>
+        <div class="home-grow-stage" id="home-grow-stage">7단계 성장 중</div>
         <div class="wp-header">
           <span class="wp-label">태그하면 비가 내려요</span>
           <span class="wp-count" id="water-count">7 / 10</span>
@@ -1013,7 +1031,7 @@ body::before{
           </div>
         </div>
         <button class="game-card" onclick="openGame('run')">
-          <div class="game-card-icon"><span class="run-mini-icon"></span></div>
+          <div class="game-card-icon cloud-logo"><img src="assets/characters/nyamcloud.png" alt="냠구름"></div>
           <div>
             <div class="game-card-title">원종제일 MARKET RUN</div>
             <div class="game-card-sub">학교에서 시장까지 달리며 과일, 별, 스탬프를 모아요.</div>
@@ -1021,7 +1039,14 @@ body::before{
           <div class="game-card-state">플레이</div>
         </button>
         <button class="game-card playable" onclick="openGame('puzzle')">
-          <div class="game-card-icon"><img class="ing-img" src="assets/ingredients/tteok.png" alt="떡"></div>
+          <div class="game-card-icon">
+            <div class="game-card-preview">
+              <img src="assets/ingredients/tteok.png" alt="떡">
+              <img src="assets/ingredients/gochujang.png" alt="고추장">
+              <img src="assets/ingredients/greenonion.png" alt="파">
+              <img src="assets/ingredients/fishcake.png" alt="어묵">
+            </div>
+          </div>
           <div>
             <div class="game-card-title">제일 바이츠 - 음식 재료 연결하기</div>
             <div class="game-card-sub">재료 3개를 맞춰 시장 음식을 완성해요.</div>
@@ -1344,6 +1369,7 @@ function updateGarden(){
   renderTree();
 }
 function renderTree(){
+  renderHomeGrowPlant();
   var wrap=document.getElementById('tree-wrap'); if(!wrap)return;
   var pct=waterCount/MAX_WATER;
   var stage=pct<.3?1:pct<.6?2:pct<1?3:4;
@@ -1356,6 +1382,36 @@ function renderTree(){
   wrap.innerHTML=trees[stage-1];
   var rw=document.getElementById('rain-wrap');
   if(rw&&pct<1){rw.innerHTML='';for(var i=0;i<8;i++){var d=document.createElement('div');d.className='raindrop';d.style.cssText='left:'+(30+Math.random()*40)+'%;height:'+(8+Math.random()*10)+'px;animation-delay:'+(Math.random()*1.1)+'s;animation-duration:'+(0.9+Math.random()*.4)+'s';rw.appendChild(d);}}
+}
+function renderHomeGrowPlant(){
+  var plant=document.getElementById('home-grow-plant');
+  if(!plant)return;
+  var level=Math.max(1,Math.min(10,waterCount));
+  var stageLabel=document.getElementById('home-grow-stage');
+  if(stageLabel)stageLabel.textContent=level+'단계 성장 중';
+  var trunkH=level<4?0:10+level*3;
+  var crown=level<4?0:9+level*2.7;
+  var sprout=level<4;
+  var fruits=level>=9;
+  var svg='<svg width="82" height="62" viewBox="0 0 82 62" aria-label="'+level+'단계 나무 성장">';
+  svg+='<ellipse cx="41" cy="56" rx="28" ry="5" fill="#B9DFAE" opacity=".55"/>';
+  if(sprout){
+    var leaf=10+level*4;
+    svg+='<path d="M41 55 C40 46 41 39 42 32" stroke="#5FAF72" stroke-width="4" stroke-linecap="round" fill="none"/>';
+    svg+='<ellipse cx="'+(37-level)+'" cy="'+(41-level*2)+'" rx="'+(leaf*.48)+'" ry="'+(leaf*.32)+'" fill="#8DDB8A" transform="rotate(-34 '+(37-level)+' '+(41-level*2)+')"/>';
+    svg+='<ellipse cx="'+(45+level)+'" cy="'+(39-level*2)+'" rx="'+(leaf*.5)+'" ry="'+(leaf*.34)+'" fill="#6FCB7B" transform="rotate(28 '+(45+level)+' '+(39-level*2)+')"/>';
+  }else{
+    svg+='<rect x="36" y="'+(56-trunkH)+'" width="10" height="'+trunkH+'" rx="5" fill="#8A5A3C"/>';
+    svg+='<ellipse cx="41" cy="'+(48-trunkH)+'" rx="'+crown+'" ry="'+(crown*.72)+'" fill="#70CA74"/>';
+    svg+='<ellipse cx="'+(31-crown*.08)+'" cy="'+(52-trunkH)+'" rx="'+(crown*.72)+'" ry="'+(crown*.55)+'" fill="#91DD86"/>';
+    svg+='<ellipse cx="'+(51+crown*.08)+'" cy="'+(51-trunkH)+'" rx="'+(crown*.72)+'" ry="'+(crown*.55)+'" fill="#57B964"/>';
+    svg+='<ellipse cx="41" cy="'+(38-trunkH)+'" rx="'+(crown*.58)+'" ry="'+(crown*.5)+'" fill="#5FC66C"/>';
+    if(fruits){
+      svg+='<circle cx="31" cy="'+(48-trunkH)+'" r="3.5" fill="#F05A5A"/><circle cx="48" cy="'+(43-trunkH)+'" r="3.5" fill="#FFCB4C"/><circle cx="55" cy="'+(54-trunkH)+'" r="3.2" fill="#F05A5A"/>';
+    }
+  }
+  svg+='</svg>';
+  plant.innerHTML=svg;
 }
 function claimCoupon(){
   if(waterCount<MAX_WATER)return;
