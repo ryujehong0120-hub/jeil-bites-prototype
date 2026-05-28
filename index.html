@@ -288,23 +288,34 @@ body::before{
 .run-stage-title{font-size:16px;font-weight:950;color:#51427E;letter-spacing:-.4px;}
 .run-stage-sub{font-size:12px;font-weight:800;color:#8A7CB8;margin-top:3px;}
 .run-world{position:absolute;left:0;right:0;top:0;bottom:96px;overflow:hidden;}
-.run-sky{position:absolute;inset:0;background:linear-gradient(180deg,#F7F0FF 0%,#E6F4FF 55%,#FFEFF6 100%);}
-.run-bg{position:absolute;left:0;right:0;bottom:126px;height:238px;z-index:1;}
-.bg-house{position:absolute;width:60px;height:62px;border-radius:14px 14px 5px 5px;background:#fff;box-shadow:0 8px 24px rgba(95,70,140,.11);border:1px solid rgba(255,255,255,.7);}
-.bg-house::before{content:'';position:absolute;left:7px;right:7px;top:-18px;height:26px;background:#D8C8FF;border-radius:12px 12px 2px 2px;transform:skewX(-10deg);}
-.bg-house::after{content:'';position:absolute;left:12px;bottom:12px;width:12px;height:14px;background:#BEEAFF;border-radius:4px;box-shadow:24px 0 0 #FFE0EC;}
-.bg-school{position:absolute;width:76px;height:70px;border-radius:16px 16px 6px 6px;background:#FFF6D6;box-shadow:0 9px 26px rgba(95,70,140,.1);}
-.bg-school::before{content:'';position:absolute;left:13px;right:13px;top:-20px;height:28px;background:#B9D8FF;border-radius:14px 14px 3px 3px;}
+.run-sky{position:absolute;inset:0;background:linear-gradient(180deg,#F6F0FF 0%,#E7F4FF 46%,#FFEFF6 100%);}
+.run-sky::before{content:'';position:absolute;left:0;right:0;bottom:0;height:138px;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.42));}
+.run-bg{position:absolute;left:0;right:0;bottom:90px;height:300px;z-index:1;}
+.bg-sidewalk{position:absolute;left:0;right:0;bottom:0;height:82px;background:linear-gradient(180deg,#F3ECFF,#E4DCF6);box-shadow:0 -8px 18px rgba(92,70,130,.06) inset;}
+.bg-sidewalk::before{content:'';position:absolute;left:0;right:0;top:18px;height:2px;background:rgba(150,130,180,.2);box-shadow:0 26px 0 rgba(150,130,180,.13);}
+.bg-building{position:absolute;bottom:58px;width:76px;height:96px;border-radius:16px 16px 5px 5px;background:#fff;box-shadow:0 10px 26px rgba(82,66,120,.14);border:1px solid rgba(255,255,255,.72);overflow:hidden;}
+.bg-building::before{content:'';position:absolute;left:0;right:0;top:0;height:22px;background:linear-gradient(90deg,#D6C9FF,#BEE7FF);}
+.bg-building::after{content:'';position:absolute;left:12px;top:34px;width:15px;height:16px;border-radius:4px;background:#CDEBFF;box-shadow:24px 0 0 #FFE2EE,0 28px 0 #D7F4D7,24px 28px 0 #FFF1BA;}
+.bg-store{position:absolute;bottom:54px;width:84px;height:82px;border-radius:14px 14px 5px 5px;background:#FFFDF8;box-shadow:0 10px 26px rgba(82,66,120,.15);border:1px solid rgba(255,255,255,.75);overflow:hidden;}
+.bg-store::before{content:'';position:absolute;left:0;right:0;top:0;height:26px;background:repeating-linear-gradient(90deg,#FF9FBC 0 14px,#FFF4F7 14px 28px);}
+.bg-store::after{content:'';position:absolute;left:13px;bottom:10px;width:17px;height:24px;border-radius:6px 6px 2px 2px;background:#BEE7FF;box-shadow:28px 0 0 #FFE6A8,52px 4px 0 -3px #C7F0D2;}
+.bg-school{position:absolute;bottom:62px;width:92px;height:92px;border-radius:16px 16px 6px 6px;background:#FFF6D6;box-shadow:0 10px 26px rgba(95,70,140,.13);border:1px solid rgba(255,255,255,.78);overflow:hidden;}
+.bg-school::before{content:'';position:absolute;left:0;right:0;top:0;height:24px;background:#B9D8FF;}
+.bg-school::after{content:'';position:absolute;left:13px;top:38px;width:16px;height:18px;background:#CDEBFF;border-radius:4px;box-shadow:24px 0 0 #CDEBFF,48px 0 0 #CDEBFF,24px 30px 0 #E8B97E;}
+.bg-crosswalk{position:absolute;left:50%;bottom:48px;width:118px;height:46px;transform:translateX(-50%) perspective(120px) rotateX(42deg);z-index:3;background:repeating-linear-gradient(90deg,rgba(255,255,255,.82) 0 12px,transparent 12px 22px);opacity:.82;}
+.bg-market-arch{position:absolute;left:50%;top:5px;width:156px;height:92px;transform:translateX(-50%);border:9px solid rgba(124,107,232,.72);border-bottom:none;border-radius:78px 78px 0 0;z-index:2;box-shadow:0 10px 26px rgba(80,60,130,.1);}
+.bg-market-arch::before{content:'원종제일시장';position:absolute;left:50%;top:21px;transform:translateX(-50%);background:#fff;color:#5B4AB3;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:950;white-space:nowrap;box-shadow:0 6px 16px rgba(80,60,130,.12);}
 .bg-tree{position:absolute;width:24px;height:54px;}
 .bg-tree::before{content:'';position:absolute;left:9px;bottom:0;width:6px;height:24px;background:#B9876B;border-radius:4px;}
 .bg-tree::after{content:'';position:absolute;left:0;top:0;width:24px;height:28px;background:#A8E6BC;border-radius:50%;box-shadow:8px 10px 0 #82DFA5,-6px 14px 0 #C6F0D2;}
 .bg-lamp{position:absolute;width:8px;height:58px;background:#8F83C8;border-radius:6px;opacity:.6;}
 .bg-lamp::before{content:'';position:absolute;left:-8px;top:-7px;width:24px;height:14px;background:#FFF2A8;border-radius:14px;}
-.bg-tent{position:absolute;width:70px;height:52px;border-radius:12px 12px 5px 5px;background:#fff;box-shadow:0 9px 26px rgba(95,70,140,.12);border:1px solid rgba(255,255,255,.7);}
-.bg-tent::before{content:'';position:absolute;left:0;right:0;top:-20px;height:28px;background:repeating-linear-gradient(90deg,#FFC7DD 0 14px,#FFF 14px 28px);border-radius:15px 15px 3px 3px;}
-.bg-tent::after{content:'';position:absolute;left:12px;bottom:8px;width:13px;height:13px;background:#FF8F8F;border-radius:50%;box-shadow:17px 0 0 #FFD36A,34px 0 0 #8EE4B6;}
-.run-road{position:absolute;left:88px;right:88px;top:128px;bottom:0;background:linear-gradient(180deg,#D6C9FF,#BFB0F3);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);z-index:2;}
-.run-lane{position:absolute;left:50%;top:144px;bottom:8px;width:3px;background:repeating-linear-gradient(180deg,rgba(255,255,255,.7) 0 18px,transparent 18px 34px);transform:translateX(-50%);z-index:3;}
+.bg-tent{position:absolute;width:78px;height:58px;border-radius:12px 12px 5px 5px;background:#fff;box-shadow:0 9px 26px rgba(95,70,140,.14);border:1px solid rgba(255,255,255,.75);overflow:hidden;}
+.bg-tent::before{content:'';position:absolute;left:0;right:0;top:0;height:24px;background:repeating-linear-gradient(90deg,#FF9FBC 0 13px,#FFF 13px 26px);}
+.bg-tent::after{content:'';position:absolute;left:11px;bottom:8px;width:14px;height:14px;background:#FF8F8F;border-radius:50%;box-shadow:18px 0 0 #FFD36A,36px 0 0 #8EE4B6;}
+.run-road{position:absolute;left:82px;right:82px;top:126px;bottom:0;background:linear-gradient(180deg,#CFC4E8 0%,#B4A9D7 100%);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);z-index:2;box-shadow:inset 0 0 22px rgba(80,60,120,.1);}
+.run-road::before{content:'';position:absolute;left:8px;right:8px;top:0;bottom:0;background:linear-gradient(90deg,rgba(255,255,255,.28),transparent 18%,transparent 82%,rgba(255,255,255,.28));clip-path:inherit;}
+.run-lane{position:absolute;left:50%;top:144px;bottom:8px;width:4px;background:repeating-linear-gradient(180deg,rgba(255,255,255,.82) 0 20px,transparent 20px 38px);transform:translateX(-50%);z-index:3;border-radius:99px;}
 .runner-cloud{position:absolute;bottom:44px;left:50%;width:86px;height:58px;transform:translateX(-50%);z-index:7;filter:drop-shadow(0 12px 10px rgba(73,56,120,.22));transition:left .18s ease;}
 .runner-cloud img{width:86px;height:58px;object-fit:contain;display:block;}
 .run-shadow{position:absolute;bottom:38px;left:50%;width:54px;height:12px;background:rgba(83,65,120,.18);border-radius:50%;transform:translateX(-50%);z-index:5;transition:left .18s ease;}
@@ -1505,22 +1516,32 @@ function setRunStage(idx){
 function renderRunBg(idx){
   var bg=document.getElementById('run-bg');
   if(!bg)return;
-  var html='';
-  if(idx<2){
-    html+='<div class="bg-school" style="left:6%;top:24px"></div>';
-    html+='<div class="bg-house" style="right:8%;top:54px;background:#E4F3FF"></div>';
-    html+='<div class="bg-house" style="left:13%;top:142px;background:#FFE7EF"></div>';
-    html+='<div class="bg-tree" style="right:19%;top:147px"></div>';
-    html+='<div class="bg-lamp" style="left:25%;top:112px"></div>';
-    html+='<div class="bg-tree" style="left:6%;top:198px"></div>';
-    html+='<div class="bg-house" style="right:14%;top:190px;background:#DFF7E8"></div>';
+  var html='<div class="bg-sidewalk"></div>';
+  if(idx===0){
+    html+='<div class="bg-school" style="left:5%"></div>';
+    html+='<div class="bg-building" style="right:6%;height:84px;background:#F6FBFF"></div>';
+    html+='<div class="bg-tree" style="left:31%;bottom:78px"></div>';
+    html+='<div class="bg-lamp" style="right:31%;bottom:80px"></div>';
+    html+='<div class="bg-crosswalk"></div>';
+  }else if(idx===1){
+    html+='<div class="bg-building" style="left:5%;height:104px;background:#FFF7FA"></div>';
+    html+='<div class="bg-building" style="right:6%;height:118px;background:#F5FBFF"></div>';
+    html+='<div class="bg-store" style="left:27%;transform:scale(.82);bottom:64px"></div>';
+    html+='<div class="bg-tree" style="right:29%;bottom:78px"></div>';
+    html+='<div class="bg-lamp" style="left:18%;bottom:82px"></div>';
+  }else if(idx===2){
+    html+='<div class="bg-market-arch"></div>';
+    html+='<div class="bg-store" style="left:5%;bottom:58px"></div>';
+    html+='<div class="bg-store" style="right:6%;bottom:62px;background:#FFFCF5"></div>';
+    html+='<div class="bg-tent" style="left:28%;bottom:72px"></div>';
+    html+='<div class="bg-lamp" style="right:27%;bottom:82px"></div>';
   }else{
-    html+='<div class="bg-tent" style="left:5%;top:36px;background:#FFB8CF"></div>';
-    html+='<div class="bg-tent" style="right:6%;top:68px;background:#BFB6FF"></div>';
-    html+='<div class="bg-tree" style="left:22%;top:116px"></div>';
-    html+='<div class="bg-lamp" style="right:24%;top:132px"></div>';
-    html+='<div class="bg-tent" style="left:9%;top:168px;background:#FFD278"></div>';
-    html+='<div class="bg-tent" style="right:11%;top:204px;background:#9EE6D4"></div>';
+    html+='<div class="bg-store" style="left:4%;bottom:72px;background:#FFF7F8"></div>';
+    html+='<div class="bg-store" style="right:5%;bottom:72px;background:#F7FFFC"></div>';
+    html+='<div class="bg-tent" style="left:18%;bottom:146px;transform:scale(.86)"></div>';
+    html+='<div class="bg-tent" style="right:18%;bottom:150px;transform:scale(.86)"></div>';
+    html+='<div class="bg-tent" style="left:8%;bottom:40px;background:#FFFDF8"></div>';
+    html+='<div class="bg-tent" style="right:9%;bottom:42px;background:#FFFDF8"></div>';
   }
   bg.innerHTML=html;
 }
